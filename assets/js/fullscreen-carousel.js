@@ -55,65 +55,35 @@
     return img;
   }
 
-  // Crear controles de navegación elegantes y amigables
+  // Crear controles de navegación simples y elegantes
   function createControls(container, totalImages) {
     const controlsContainer = document.createElement('div');
-    controlsContainer.className = 'absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-6';
+    controlsContainer.className = 'absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-8';
     
-    // Botón anterior más grande y bonito
+    // Botón anterior elegante
     const prevBtn = document.createElement('button');
-    prevBtn.className = 'w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
+    prevBtn.className = 'w-20 h-20 rounded-full bg-black/20 backdrop-blur-lg border-2 border-white/30 text-white hover:bg-black/30 hover:scale-110 transition-all duration-500 flex items-center justify-center group shadow-2xl';
     prevBtn.innerHTML = `
-      <svg class="w-8 h-8 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-10 h-10 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     `;
     prevBtn.setAttribute('aria-label', 'Imagen anterior');
     
-    // Indicadores de posición más bonitos
-    const indicators = document.createElement('div');
-    indicators.className = 'flex gap-3';
-    for (let i = 0; i < totalImages; i++) {
-      const indicator = document.createElement('button');
-      indicator.className = `w-4 h-4 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125 shadow-lg' : 'bg-white/50 hover:bg-white/70 hover:scale-110'}`;
-      indicator.setAttribute('data-index', i);
-      indicator.setAttribute('aria-label', `Ir a imagen ${i + 1}`);
-      indicators.appendChild(indicator);
-    }
-    
-    // Botón siguiente más grande y bonito
+    // Botón siguiente elegante
     const nextBtn = document.createElement('button');
-    nextBtn.className = 'w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
+    nextBtn.className = 'w-20 h-20 rounded-full bg-black/20 backdrop-blur-lg border-2 border-white/30 text-white hover:bg-black/30 hover:scale-110 transition-all duration-500 flex items-center justify-center group shadow-2xl';
     nextBtn.innerHTML = `
-      <svg class="w-8 h-8 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-10 h-10 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     `;
     nextBtn.setAttribute('aria-label', 'Imagen siguiente');
     
-    // Contador de imágenes más elegante
-    const counter = document.createElement('div');
-    counter.className = 'text-white/90 text-sm font-medium px-5 py-3 bg-white/15 backdrop-blur-md border border-white/30 rounded-full shadow-lg';
-    counter.textContent = `1 / ${totalImages}`;
-    
-    // Botón de pausa/reproducción más bonito
-    const playPauseBtn = document.createElement('button');
-    playPauseBtn.className = 'w-14 h-14 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
-    playPauseBtn.innerHTML = `
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6l4-3-4-3z"></path>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-      </svg>
-    `;
-    playPauseBtn.setAttribute('aria-label', 'Pausar/Reproducir');
-    
     controlsContainer.appendChild(prevBtn);
-    controlsContainer.appendChild(indicators);
     controlsContainer.appendChild(nextBtn);
-    controlsContainer.appendChild(counter);
-    controlsContainer.appendChild(playPauseBtn);
     
-    return { controlsContainer, prevBtn, nextBtn, indicators, counter, playPauseBtn };
+    return { controlsContainer, prevBtn, nextBtn };
   }
 
   // Inicializar carrusel
@@ -142,7 +112,7 @@
     container.appendChild(imagesContainer);
     
     // Crear controles
-    const { controlsContainer, prevBtn, nextBtn, indicators, counter, playPauseBtn } = createControls(container, images.length);
+    const { controlsContainer, prevBtn, nextBtn } = createControls(container, images.length);
     container.appendChild(controlsContainer);
     
     // Función para cambiar imagen
@@ -162,13 +132,7 @@
       nextImg.style.opacity = '1';
       currentImg.style.opacity = '0';
       
-      // Actualizar indicadores
-      indicators.children[currentIndex].className = 'w-4 h-4 rounded-full transition-all duration-300 bg-white/50 hover:bg-white/70 hover:scale-110';
-      indicators.children[newIndex].className = 'w-4 h-4 rounded-full transition-all duration-300 bg-white scale-125 shadow-lg';
-      
-      // Actualizar contador
-      counter.textContent = `${newIndex + 1} / ${images.length}`;
-      
+      // Sin indicadores ni contador - solo navegación simple
       currentIndex = newIndex;
       
       // Resetear timer de transición
@@ -193,79 +157,14 @@
     nextBtn.addEventListener('click', nextImage);
     prevBtn.addEventListener('click', prevImage);
     
-    // Botón de pausa/reproducción
-    playPauseBtn.addEventListener('click', () => {
-      if (autoPlayTimer) {
-        stopAutoPlay();
-        playPauseBtn.innerHTML = `
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m-6-8h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z"></path>
-          </svg>
-        `;
-      } else {
-        startAutoPlay();
-        playPauseBtn.innerHTML = `
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6l4-3-4-3z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        `;
-      }
-    });
-    
-    // Indicadores clickeables
-    indicators.addEventListener('click', (e) => {
-      const index = parseInt(e.target.getAttribute('data-index'));
-      if (!isNaN(index)) {
-        changeImage(index);
-      }
-    });
-    
     // Navegación con teclado
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
-      if (e.key === ' ') {
-        e.preventDefault();
-        toggleAutoPlay();
-      }
     });
     
-    // Auto-play
-    function startAutoPlay() {
-      autoPlayTimer = setInterval(nextImage, INTERVAL_MS);
-    }
-    
-    function stopAutoPlay() {
-      if (autoPlayTimer) {
-        clearInterval(autoPlayTimer);
-        autoPlayTimer = null;
-      }
-    }
-    
-    function toggleAutoPlay() {
-      if (autoPlayTimer) {
-        stopAutoPlay();
-      } else {
-        startAutoPlay();
-      }
-    }
-    
-    // Pausar en hover
-    container.addEventListener('mouseenter', stopAutoPlay);
-    container.addEventListener('mouseleave', startAutoPlay);
-    
-    // Pausar cuando la pestaña no está visible
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        stopAutoPlay();
-      } else {
-        startAutoPlay();
-      }
-    });
-    
-    // Iniciar auto-play
-    startAutoPlay();
+    // Auto-play deshabilitado - solo navegación manual
+    // Las imágenes cambian solo con los botones o teclado
     
     // Precargar más imágenes progresivamente
     setTimeout(() => {
