@@ -40,66 +40,67 @@
     });
   }
 
-  // Crear elemento de imagen optimizado que preserve calidad
+  // Crear elemento de imagen optimizado que preserve calidad y llene la pantalla
   function createImageElement(src, isActive = false) {
     const img = document.createElement('img');
     img.src = src;
     img.alt = 'Fotografía profesional';
-    img.className = 'absolute inset-0 w-full h-full object-contain transition-opacity duration-1200 ease-in-out';
+    img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ease-in-out';
     img.style.opacity = isActive ? '1' : '0';
     img.loading = 'eager';
     img.decoding = 'async';
     img.style.imageRendering = 'high-quality';
     img.style.imageRendering = '-webkit-optimize-contrast';
+    img.style.objectPosition = 'center';
     return img;
   }
 
-  // Crear controles de navegación elegantes
+  // Crear controles de navegación elegantes y amigables
   function createControls(container, totalImages) {
     const controlsContainer = document.createElement('div');
     controlsContainer.className = 'absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-6';
     
-    // Botón anterior
+    // Botón anterior más grande y bonito
     const prevBtn = document.createElement('button');
-    prevBtn.className = 'w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 flex items-center justify-center group';
+    prevBtn.className = 'w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
     prevBtn.innerHTML = `
-      <svg class="w-7 h-7 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-8 h-8 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     `;
     prevBtn.setAttribute('aria-label', 'Imagen anterior');
     
-    // Indicadores de posición mejorados
+    // Indicadores de posición más bonitos
     const indicators = document.createElement('div');
     indicators.className = 'flex gap-3';
     for (let i = 0; i < totalImages; i++) {
       const indicator = document.createElement('button');
-      indicator.className = `w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/60'}`;
+      indicator.className = `w-4 h-4 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white scale-125 shadow-lg' : 'bg-white/50 hover:bg-white/70 hover:scale-110'}`;
       indicator.setAttribute('data-index', i);
       indicator.setAttribute('aria-label', `Ir a imagen ${i + 1}`);
       indicators.appendChild(indicator);
     }
     
-    // Botón siguiente
+    // Botón siguiente más grande y bonito
     const nextBtn = document.createElement('button');
-    nextBtn.className = 'w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 flex items-center justify-center group';
+    nextBtn.className = 'w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
     nextBtn.innerHTML = `
-      <svg class="w-7 h-7 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-8 h-8 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     `;
     nextBtn.setAttribute('aria-label', 'Imagen siguiente');
     
-    // Contador de imágenes elegante
+    // Contador de imágenes más elegante
     const counter = document.createElement('div');
-    counter.className = 'text-white/90 text-sm font-medium px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full';
+    counter.className = 'text-white/90 text-sm font-medium px-5 py-3 bg-white/15 backdrop-blur-md border border-white/30 rounded-full shadow-lg';
     counter.textContent = `1 / ${totalImages}`;
     
-    // Botón de pausa/reproducción
+    // Botón de pausa/reproducción más bonito
     const playPauseBtn = document.createElement('button');
-    playPauseBtn.className = 'w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300 flex items-center justify-center group';
+    playPauseBtn.className = 'w-14 h-14 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white hover:bg-white/25 hover:scale-110 transition-all duration-300 flex items-center justify-center group shadow-lg';
     playPauseBtn.innerHTML = `
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6l4-3-4-3z"></path>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
@@ -162,8 +163,8 @@
       currentImg.style.opacity = '0';
       
       // Actualizar indicadores
-      indicators.children[currentIndex].className = 'w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/60';
-      indicators.children[newIndex].className = 'w-3 h-3 rounded-full transition-all duration-300 bg-white scale-125';
+      indicators.children[currentIndex].className = 'w-4 h-4 rounded-full transition-all duration-300 bg-white/50 hover:bg-white/70 hover:scale-110';
+      indicators.children[newIndex].className = 'w-4 h-4 rounded-full transition-all duration-300 bg-white scale-125 shadow-lg';
       
       // Actualizar contador
       counter.textContent = `${newIndex + 1} / ${images.length}`;

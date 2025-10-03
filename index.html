@@ -6,12 +6,6 @@
     <title>Anastacia — Fotógrafa Profesional</title>
     <meta name="description" content="Fotógrafa profesional especializada en retratos, bodas y sesiones editoriales. Capturando momentos únicos con autenticidad y belleza." />
 
-    <!-- SEO / Open Graph -->
-    <meta property="og:title" content="Anastacia — Fotógrafa Profesional" />
-    <meta property="og:description" content="Fotógrafa profesional especializada en retratos, bodas y sesiones editoriales." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="fotos/foto-retrato.jpg" />
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,19 +34,6 @@
                             700: '#c2410c',
                             800: '#9a3412',
                             900: '#7c2d12',
-                        },
-                        neutral: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                            950: '#0a0a0a',
                         }
                     },
                     animation: {
@@ -60,6 +41,7 @@
                         'slide-up': 'slideUp 0.8s ease-out',
                         'scale-in': 'scaleIn 0.6s ease-out',
                         'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -128,15 +110,6 @@
             background-clip: text;
         }
 
-        /* Hide scrollbar for carousel */
-        .carousel-container {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
         /* Smooth reveal animation */
         .reveal {
             opacity: 0;
@@ -147,18 +120,46 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Carousel image optimization */
+        .carousel-image {
+            object-fit: cover;
+            object-position: center;
+            image-rendering: high-quality;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* Beautiful hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .floating:nth-child(2) {
+            animation-delay: 2s;
+        }
+        .floating:nth-child(3) {
+            animation-delay: 4s;
+        }
     </style>
 </head>
 
-<body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
+<body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     
     <!-- Full Screen Photo Carousel -->
-    <section data-fullscreen-carousel class="h-screen w-screen overflow-hidden">
+    <section data-fullscreen-carousel class="h-screen w-screen overflow-hidden relative">
         <!-- Solo el carrusel, sin overlay ni contenido encima -->
     </section>
 
     <!-- Navigation (appears on scroll) -->
-    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transform -translate-y-full transition-transform duration-300">
+    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transform -translate-y-full transition-all duration-300">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Logo -->
             <div class="text-white font-serif text-2xl font-semibold tracking-wide">
@@ -205,10 +206,10 @@
                         "Capturando momentos únicos con autenticidad y belleza. Cada imagen cuenta una historia que merece ser preservada."
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#projects" class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300">
+                        <a href="#projects" class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300 hover-lift">
                             Ver mi trabajo
                         </a>
-                        <a href="#contact" class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300">
+                        <a href="#contact" class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 hover-lift">
                             Contacto
                         </a>
                     </div>
@@ -218,13 +219,13 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
+    <section id="about" class="relative z-30 bg-neutral-50 dark:bg-neutral-800 py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Content -->
                 <div class="reveal">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
                         Mi historia
                     </div>
                     
@@ -246,9 +247,9 @@
                             experimento con luz y composición para crear arte visual.
                         </p>
                         
-                        <div class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl border-l-4 border-brand-500">
+                        <div class="bg-white dark:bg-neutral-700 p-6 rounded-xl border-l-4 border-brand-500 shadow-lg">
                             <h3 class="font-semibold text-lg mb-3 text-neutral-900 dark:text-white">Mi filosofía</h3>
-                            <p class="italic">
+                            <p class="italic text-neutral-700 dark:text-neutral-300">
                                 "Cada momento es único y merece ser preservado con autenticidad y belleza. 
                                 Trabajo con luz natural siempre que es posible y me enfoco en crear un ambiente 
                                 relajado donde mis clientes puedan ser ellos mismos."
@@ -258,15 +259,15 @@
 
                     <!-- Stats -->
                     <div class="grid grid-cols-3 gap-6 mt-12">
-                        <div class="text-center">
+                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
                             <div class="text-3xl font-bold text-brand-500 mb-2">200+</div>
                             <div class="text-sm text-neutral-600 dark:text-neutral-400">Sesiones</div>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
                             <div class="text-3xl font-bold text-brand-500 mb-2">5</div>
                             <div class="text-sm text-neutral-600 dark:text-neutral-400">Años</div>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
                             <div class="text-3xl font-bold text-brand-500 mb-2">100%</div>
                             <div class="text-sm text-neutral-600 dark:text-neutral-400">Satisfacción</div>
                         </div>
@@ -278,7 +279,7 @@
                     <div class="relative group">
                         <div class="absolute -inset-4 bg-gradient-to-r from-brand-400/20 to-brand-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                         
-                        <div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-2xl">
+                        <div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-2xl hover-lift">
                             <img src="fotos/foto-retrato.jpg" 
                                  alt="Anastacia - Fotógrafa profesional" 
                                  class="w-full rounded-xl object-cover aspect-[4/5] transition-transform duration-500 group-hover:scale-105" 
@@ -291,6 +292,21 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Floating decorative elements -->
+                        <div class="absolute -top-6 -right-6 w-12 h-12 bg-brand-400 rounded-full flex items-center justify-center shadow-lg floating">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-white dark:bg-neutral-800 rounded-xl shadow-lg flex items-center justify-center floating">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-brand-500">5★</div>
+                                <div class="text-xs text-neutral-600 dark:text-neutral-400">Rating</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -298,12 +314,12 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="relative z-30 bg-neutral-50 dark:bg-neutral-800 py-20 px-6">
+    <section id="projects" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <div class="reveal">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
                         Mi trabajo
                     </div>
                     
@@ -320,16 +336,16 @@
 
             <!-- Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300">
+                <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
                     Todas
                 </button>
-                <button data-filter="retrato" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300">
+                <button data-filter="retrato" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
                     Retratos
                 </button>
-                <button data-filter="bodas" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300">
+                <button data-filter="bodas" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
                     Bodas
                 </button>
-                <button data-filter="editorial" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300">
+                <button data-filter="editorial" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
                     Editorial
                 </button>
             </div>
@@ -342,7 +358,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
+    <section id="contact" class="relative z-30 bg-neutral-50 dark:bg-neutral-800 py-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <div class="reveal">
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-neutral-900 dark:text-white">
@@ -356,11 +372,11 @@
                 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <a href="mailto:anastacia@fotografa.com" 
-                       class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300">
+                       class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300 hover-lift">
                         Enviar mensaje
                     </a>
                     <a href="tel:+1234567890" 
-                       class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300">
+                       class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 hover-lift">
                         Llamar ahora
                     </a>
                 </div>
@@ -524,12 +540,30 @@
                 title: 'Serenidad Costera',
                 category: 'editorial',
                 story: 'Los atardeceres en la playa ofrecen los colores más hermosos para fotografiar. Esta imagen documenta la serenidad y vastedad del paisaje costero con el horizonte en tercio inferior y luz natural de atardecer.'
+            },
+            {
+                src: 'fotos/monta;a-playa.jpg',
+                title: 'Contraste Natural',
+                category: 'editorial',
+                story: 'La combinación de montaña y mar crea paisajes únicos llenos de texturas. Esta imagen captura la inmensidad de ambos elementos naturales en perfecta armonía.'
+            },
+            {
+                src: 'fotos/hamburguesa-preparando.jpg',
+                title: 'Arte Culinario',
+                category: 'editorial',
+                story: 'La cocina es un laboratorio de texturas, colores y aromas perfectos para fotografiar. Capturé el proceso creativo con primer plano y profundidad de campo reducida.'
+            },
+            {
+                src: 'fotos/pizza-cortando.jpg',
+                title: 'Momento Decisivo',
+                category: 'editorial',
+                story: 'El momento de cortar la pizza es perfecto para capturar texturas y movimiento. Utilicé enfoque selectivo y composición dinámica con líneas diagonales.'
             }
         ];
 
         function createPhotoCard(photo) {
             const card = document.createElement('div');
-            card.className = 'group cursor-pointer reveal';
+            card.className = 'group cursor-pointer reveal hover-lift';
             card.setAttribute('data-category', photo.category);
             
             card.innerHTML = `
