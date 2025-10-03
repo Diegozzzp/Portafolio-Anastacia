@@ -1,6 +1,17 @@
 # Portafolio Fotográfico — Sitio estático listo para GitHub Pages
 
-Sitio estático (HTML+CSS+JS) para un portafolio de fotógrafa junior. Moderno, responsive, con modo claro/oscuro, galería filtrable y lightbox. Publicable gratis en GitHub Pages.
+Sitio estático (HTML+CSS+JS) para un portafolio de fotógrafa junior. **Diseño creativo y moderno** con hero section impactante, galería con descripciones detalladas, modo claro/oscuro y lightbox interactivo. Publicable gratis en GitHub Pages.
+
+## ✨ Características destacadas
+
+- **Hero section creativo** con foto de la fotógrafa, estadísticas y elementos decorativos
+- **Descripciones detalladas** para cada foto: propósito, técnica utilizada y historia detrás
+- **Lightbox expandido** con información completa y navegación inteligente
+- **Sección "Sobre mí"** mejorada con biografía personal y galería de trabajo
+- **Diseño responsive** con animaciones suaves y efectos visuales modernos
+- **Modo claro/oscuro** con persistencia en localStorage
+- **Filtros por categoría** y búsqueda en tiempo real
+- **Optimización de imágenes** con WebP y srcset
 
 ## Estructura
 

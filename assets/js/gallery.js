@@ -38,6 +38,90 @@
     'pizza-cortando.jpg',
   ];
 
+  // Descripciones detalladas para cada foto con propósito y técnica
+  const photoDescriptions = {
+    'foto-retrato.jpg': {
+      purpose: 'Retrato profesional que busca capturar la esencia natural de la persona',
+      technique: 'Luz natural suave desde una ventana, composición de regla de tercios, enfoque en los ojos',
+      story: 'Esta sesión se realizó durante la hora dorada para aprovechar la luz cálida y crear una atmósfera íntima'
+    },
+    'fotoretrato-camaraencara.jpg': {
+      purpose: 'Mostrar la conexión entre fotógrafa y sujeto durante una sesión',
+      technique: 'Primer plano con profundidad de campo reducida, luz natural difusa',
+      story: 'Capturé este momento espontáneo donde la confianza se construye entre fotógrafa y cliente'
+    },
+    'retrato.jpg': {
+      purpose: 'Retrato clásico con enfoque en la expresión auténtica',
+      technique: 'Iluminación de estudio con softbox, fondo neutro para destacar al sujeto',
+      story: 'Una sesión donde trabajamos juntos para encontrar la expresión más natural y genuina'
+    },
+    'kid-retrato.jpg': {
+      purpose: 'Capturar la inocencia y espontaneidad de la infancia',
+      technique: 'Luz natural, velocidad de obturación alta para congelar el movimiento',
+      story: 'Los niños son los mejores modelos porque no posan, simplemente son ellos mismos'
+    },
+    'manos-agarranado-zapatos-bebe.jpg': {
+      purpose: 'Documentar los pequeños detalles que hacen únicos los momentos familiares',
+      technique: 'Macro con apertura amplia, enfoque selectivo en las manos',
+      story: 'Esta imagen captura la ternura de los primeros pasos y la curiosidad infantil'
+    },
+    'manos-casados-anillos.jpg': {
+      purpose: 'Símbolo del compromiso y la unión en una boda',
+      technique: 'Primer plano con luz natural, composición centrada para destacar los anillos',
+      story: 'El momento más íntimo de la ceremonia, donde dos vidas se unen para siempre'
+    },
+    'casados-mirandose.jpg': {
+      purpose: 'Capturar el amor y la conexión entre los recién casados',
+      technique: 'Luz natural cálida, composición de regla de tercios, momento decisivo',
+      story: 'Este beso fue completamente espontáneo, capturé la emoción pura del momento'
+    },
+    'beso-embarazada-esposos.jpg': {
+      purpose: 'Documentar el amor en una nueva etapa de la vida familiar',
+      technique: 'Luz natural suave, enfoque en la expresión de amor y expectación',
+      story: 'La ternura de esperar un bebé se refleja en cada gesto y mirada entre los padres'
+    },
+    'embarazada-esposo-mirada.jpg': {
+      purpose: 'Mostrar la complicidad y apoyo durante el embarazo',
+      technique: 'Composición diagonal, luz natural que resalta las formas suaves',
+      story: 'Una mirada llena de amor y protección que habla más que mil palabras'
+    },
+    'estructura-carrousel.jpg': {
+      purpose: 'Explorar la geometría y los juegos de luz en arquitectura',
+      technique: 'Composición geométrica, contraste entre luces y sombras',
+      story: 'Me fascina cómo la luz transforma las estructuras en esculturas de sombras'
+    },
+    'espuma-playa.jpg': {
+      purpose: 'Capturar el movimiento y la textura del mar',
+      technique: 'Velocidad de obturación lenta para crear movimiento fluido, composición minimalista',
+      story: 'La espuma del mar crea patrones únicos que nunca se repiten, cada ola es diferente'
+    },
+    'playa.jpg': {
+      purpose: 'Documentar la serenidad y vastedad del paisaje costero',
+      technique: 'Horizonte en tercio inferior, luz natural de atardecer',
+      story: 'Los atardeceres en la playa ofrecen los colores más hermosos para fotografiar'
+    },
+    'monta;a-playa.jpg': {
+      purpose: 'Contrastar la inmensidad de la montaña con el mar',
+      technique: 'Composición de paisaje amplio, luz natural de mediodía',
+      story: 'La combinación de montaña y mar crea paisajes únicos llenos de texturas'
+    },
+    'marca-producto.jpg': {
+      purpose: 'Fotografía comercial para destacar productos de manera atractiva',
+      technique: 'Iluminación de estudio controlada, composición limpia y minimalista',
+      story: 'La fotografía de producto requiere atención al detalle para mostrar cada textura y forma'
+    },
+    'hamburguesa-preparando.jpg': {
+      purpose: 'Capturar el proceso creativo de la cocina',
+      technique: 'Primer plano con profundidad de campo reducida, luz natural',
+      story: 'La cocina es un laboratorio de texturas, colores y aromas perfectos para fotografiar'
+    },
+    'pizza-cortando.jpg': {
+      purpose: 'Documentar la textura y el momento de servir comida',
+      technique: 'Enfoque selectivo, composición dinámica con líneas diagonales',
+      story: 'El momento de cortar la pizza es perfecto para capturar texturas y movimiento'
+    }
+  };
+
   // Intentamos derivar categoría por palabras clave en el nombre
   function deriveCategory(filename) {
     const name = filename.toLowerCase();
@@ -68,13 +152,20 @@
   }
 
   const images = imageFiles.map((file, index) => {
+    const description = photoDescriptions[file] || {
+      purpose: 'Capturar momentos únicos con autenticidad',
+      technique: 'Luz natural y composición cuidadosa',
+      story: 'Cada imagen cuenta una historia especial'
+    };
+    
     return {
       id: index,
       file,
       src: IMAGE_FOLDER + file,
       title: filenameToTitle(file),
       category: deriveCategory(file),
-      meta: filenameToMeta(file)
+      meta: filenameToMeta(file),
+      description: description
     };
   });
 
@@ -88,6 +179,10 @@
   const lbImg = document.getElementById('lbImage');
   const lbTitle = document.getElementById('lbTitle');
   const lbMeta = document.getElementById('lbMeta');
+  const lbPurpose = document.getElementById('lbPurpose');
+  const lbTechnique = document.getElementById('lbTechnique');
+  const lbStory = document.getElementById('lbStory');
+  const lbCounter = document.getElementById('lbCounter');
   const lbClose = document.getElementById('lbClose');
   const lbPrev = document.getElementById('lbPrev');
   const lbNext = document.getElementById('lbNext');
@@ -216,22 +311,45 @@
   function updateLightbox() {
     const img = images[activeIndex];
     if (!img) return;
+    
+    // Actualizar imagen
     lbImg.style.opacity = '0';
     lbImg.onload = () => lbImg.style.opacity = '1';
     lbImg.src = img.src;
     lbImg.alt = img.title;
+    
+    // Actualizar información básica
     lbTitle.textContent = img.title;
     lbMeta.textContent = img.meta || img.category;
+    
+    // Actualizar descripciones detalladas
+    lbPurpose.textContent = img.description.purpose;
+    lbTechnique.textContent = img.description.technique;
+    lbStory.textContent = img.description.story;
+    
+    // Actualizar contador
+    const filteredImages = getFiltered();
+    const currentPosition = filteredImages.findIndex(i => i.id === img.id) + 1;
+    lbCounter.textContent = `${currentPosition} de ${filteredImages.length}`;
+    
+    // Actualizar enlace de descarga
     lbDownload.href = img.src;
+    lbDownload.download = img.file;
   }
 
   function next() {
-    activeIndex = (activeIndex + 1) % images.length;
+    const filteredImages = getFiltered();
+    const currentIdx = filteredImages.findIndex(i => i.id === images[activeIndex].id);
+    const nextIdx = (currentIdx + 1) % filteredImages.length;
+    activeIndex = filteredImages[nextIdx].id;
     updateLightbox();
   }
 
   function prev() {
-    activeIndex = (activeIndex - 1 + images.length) % images.length;
+    const filteredImages = getFiltered();
+    const currentIdx = filteredImages.findIndex(i => i.id === images[activeIndex].id);
+    const prevIdx = (currentIdx - 1 + filteredImages.length) % filteredImages.length;
+    activeIndex = filteredImages[prevIdx].id;
     updateLightbox();
   }
 
