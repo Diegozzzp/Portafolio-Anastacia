@@ -153,13 +153,12 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
     
     <!-- Full Screen Photo Carousel -->
-    <section data-fullscreen-carousel class="fixed inset-0 z-0 h-screen w-screen overflow-hidden">
-        <!-- Overlay for text readability -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10"></div>
+    <section data-fullscreen-carousel class="h-screen w-screen overflow-hidden">
+        <!-- Solo el carrusel, sin overlay ni contenido encima -->
     </section>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <!-- Navigation (appears on scroll) -->
+    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transform -translate-y-full transition-transform duration-300">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Logo -->
             <div class="text-white font-serif text-2xl font-semibold tracking-wide">
@@ -191,25 +190,29 @@
         </div>
     </nav>
 
-    <!-- Hero Content -->
-    <section class="relative z-20 h-screen flex items-center justify-center px-6">
-        <div class="text-center text-white max-w-4xl mx-auto">
-            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-                <span class="text-gradient">Anastacia</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-white/90 font-light animate-slide-up">
-                Fotógrafa Profesional
-            </p>
-            <p class="text-lg md:text-xl mb-12 text-white/80 max-w-2xl mx-auto leading-relaxed animate-slide-up">
-                "Capturando momentos únicos con autenticidad y belleza. Cada imagen cuenta una historia que merece ser preservada."
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-                <a href="#about" class="px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white font-medium hover:bg-white/30 transition-all duration-300">
-                    Conoce mi historia
-                </a>
-                <a href="#projects" class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300">
-                    Ver mi trabajo
-                </a>
+    <!-- Hero Content (Photographer Presentation) -->
+    <section class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="reveal">
+                    <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-neutral-900 dark:text-white">
+                        <span class="text-gradient">Anastacia</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-neutral-600 dark:text-neutral-300 font-light">
+                        Fotógrafa Profesional
+                    </p>
+                    <p class="text-lg md:text-xl mb-12 text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+                        "Capturando momentos únicos con autenticidad y belleza. Cada imagen cuenta una historia que merece ser preservada."
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#projects" class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300">
+                            Ver mi trabajo
+                        </a>
+                        <a href="#contact" class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300">
+                            Contacto
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -575,6 +578,24 @@
 
         // Initialize gallery
         renderGallery();
+
+        // Navigation appears on scroll
+        const mainNav = document.getElementById('mainNav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                mainNav.classList.remove('-translate-y-full');
+                mainNav.classList.add('bg-black/80', 'backdrop-blur-md');
+            } else {
+                mainNav.classList.add('-translate-y-full');
+                mainNav.classList.remove('bg-black/80', 'backdrop-blur-md');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
     </script>
 </body>
 </html>
