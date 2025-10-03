@@ -38,6 +38,14 @@
     'pizza-cortando.jpg',
   ];
 
+  // Exponer listas globales para reutilizar en otras secciones (e.g., hero)
+  try {
+    window.PORTFOLIO_IMAGE_FILES = imageFiles.slice();
+    window.PORTFOLIO_IMAGE_SRCS = imageFiles.map(f => IMAGE_FOLDER + f);
+  } catch (e) {
+    // no-op en entornos sin window
+  }
+
   // Descripciones detalladas para cada foto con propósito y técnica
   const photoDescriptions = {
     'foto-retrato.jpg': {

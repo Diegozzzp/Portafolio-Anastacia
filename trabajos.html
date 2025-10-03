@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trabajos — Portafolio</title>
+    <meta name="description" content="Trabajos fotográficos clasificados por categorías con filtros y búsqueda." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter','system-ui','sans-serif'] }, colors: { brand: { 400: '#fb923c', 500: '#f97316' } } } } }
+    </script>
+    <link rel="stylesheet" href="assets/css/tailwind-extras.css" />
+    <style>html:not(.ready) body { visibility: hidden; }</style>
+    <script>(function(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;const d=s?s==='dark':p;if(d)document.documentElement.classList.add('dark');document.documentElement.classList.add('ready');})();</script>
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-neutral-900/60 border-b border-neutral-200/60 dark:border-neutral-800">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="font-semibold tracking-tight text-lg">← Inicio</a>
+        <button id="themeToggle" class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition" aria-label="Cambiar tema">🌗</button>
+      </nav>
+    </header>
+
+    <!-- Intro hero compacto -->
+    <section class="relative py-14 sm:py-20 border-b border-neutral-200/60 dark:border-neutral-800 bg-gradient-to-br from-neutral-50 via-brand-50/20 to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-900">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Trabajos</h1>
+        <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">“Las fotografías son la pausa que merece la memoria.” Explora mis series por categoría y filtra para encontrar lo que buscas.</p>
+        <div class="mt-6">
+          <a href="#galeria" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 text-white font-medium hover:bg-brand-400 transition">Ver galería</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros + búsqueda -->
+    <section id="galeria" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtros de categoría">
+          <button data-filter="all" class="filter-btn active px-3 py-1.5 rounded-full text-sm border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-brand-400">Todas</button>
+        </div>
+        <div class="relative">
+          <input id="searchInput" type="search" placeholder="Buscar por nombre..." class="w-full sm:w-72 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/70 dark:bg-neutral-900/60 px-3 py-2 outline-none focus:ring-2 focus:ring-brand-400" aria-label="Buscar fotos por nombre" />
+          <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400">⌘K</div>
+        </div>
+      </div>
+
+      <div id="galleryGrid" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+    </section>
+
+    <footer class="border-t border-neutral-200 dark:border-neutral-800 py-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <p class="text-sm">© <span id="year"></span> [Nombre].</p>
+        <a class="text-sm hover:underline" href="index.html#contacto">Contacto</a>
+      </div>
+    </footer>
+
+    <script defer src="assets/js/gallery.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const toggle = document.getElementById('themeToggle');
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+      document.title = 'Trabajos — Portafolio';
+    </script>
+  </body>
+</html>
+
+
