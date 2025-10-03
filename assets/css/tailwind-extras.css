@@ -1,0 +1,21 @@
+/*
+  tailwind-extras.css
+  - Ajustes mínimos no cubiertos por utilidades Tailwind
+  - Clases auxiliares y mitigación de FOUC cuando se usa el Play CDN
+*/
+
+/* Transición de color/tema suave */
+* { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: 200ms; transition-timing-function: ease; }
+
+/* Enfatizar foco visible */
+:focus-visible { outline: 2px solid rgb(251 146 60 / 0.8); outline-offset: 2px; }
+
+/* Estados activos para filtros */
+.filter-btn.active { background-color: rgb(245 245 244 / 1); }
+.dark .filter-btn.active { background-color: rgb(38 38 38 / 1); }
+
+/* Utilidad: soportar "supports-[backdrop-filter]" en Safari antiguos (no-op) */
+.supports-\[backdrop-filter\]\:bg-white\/70 { background-color: rgba(255,255,255,0.7); }
+.dark .supports-\[backdrop-filter\]\:bg-neutral-900\/60 { background-color: rgba(23,23,23,0.6); }
+
+
