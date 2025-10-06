@@ -66,6 +66,9 @@
         }
     </script>
 
+    <!-- Extra CSS (animaciones y microinteracciones) -->
+    <link rel="stylesheet" href="assets/css/tailwind-extras.css" />
+
     <!-- Custom CSS -->
     <style>
         /* Smooth transitions */
@@ -154,20 +157,20 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     
     <!-- Hero a pantalla completa: Presentación de la fotógrafa -->
-    <section id="hero" class="relative h-screen w-screen bg-white dark:bg-neutral-900">
+    <section id="hero" class="relative min-h-[100svh] w-full bg-white dark:bg-neutral-900">
         <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
         <div class="relative h-full max-w-7xl mx-auto px-6 py-10 grid items-center gap-10 lg:grid-cols-2">
             <!-- Foto principal -->
-            <div class="order-2 lg:order-1">
+            <div class="order-2 lg:order-1 animate-scaleIn">
                 <div class="relative group max-w-xl mx-auto">
                     <div class="absolute -inset-4 bg-gradient-to-r from-brand-400/20 to-brand-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                     <div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-2xl">
-                        <img src="fotos/fotoretrato-camaraencara.jpg" alt="Anastacia — Fotógrafa" class="w-full rounded-xl object-cover aspect-[4/5]" />
+                        <img src="fotos/fotoretrato-camaraencara.jpg" alt="Anastacia — Fotógrafa" class="w-full max-w-full rounded-xl object-cover aspect-[4/5]" />
                     </div>
                 </div>
             </div>
             <!-- Texto de presentación -->
-            <div class="order-1 lg:order-2 text-center lg:text-left">
+            <div class="order-1 lg:order-2 text-center lg:text-left animate-fadeInUp">
                 <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-neutral-900 dark:text-white">
                     Hola, soy <span class="text-gradient">Anastacia</span>
                 </h1>
@@ -193,7 +196,6 @@
             
             <!-- Navigation Links -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">About Me</a>
                 <a href="#projects" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">Projects</a>
                 <a href="#contact" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">Contact</a>
             </div>
@@ -209,151 +211,15 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="md:hidden fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-lg z-40 transform -translate-y-full transition-transform duration-300">
             <div class="px-6 py-8 space-y-6">
-                <a href="#about" class="block text-white text-xl font-medium">About Me</a>
                 <a href="#projects" class="block text-white text-xl font-medium">Projects</a>
                 <a href="#contact" class="block text-white text-xl font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="reveal">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
-                        Mi trabajo
-                    </div>
-                    
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-neutral-900 dark:text-white">
-                        <span class="text-gradient">Projects</span>
-                    </h2>
-                    
-                    <p class="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-                        Cada proyecto es una historia única. Explora mis trabajos más recientes y descubre 
-                        las historias detrás de cada imagen.
-                    </p>
-                </div>
-            </div>
+    
 
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
-                    Todas
-                </button>
-                <button data-filter="retrato" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
-                    Retratos
-                </button>
-                <button data-filter="bodas" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
-                    Bodas
-                </button>
-                <button data-filter="editorial" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
-                    Editorial
-                </button>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Images will be loaded here by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="relative z-30 bg-neutral-50 dark:bg-neutral-800 py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Content -->
-                <div class="reveal">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
-                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
-                        Mi historia
-                    </div>
-                    
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-neutral-900 dark:text-white">
-                        Hola, soy <span class="text-gradient">Anastacia</span>
-                    </h2>
-                    
-                    <div class="space-y-6 text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                        <p class="text-lg">
-                            Soy una fotógrafa apasionada con más de 5 años de experiencia capturando momentos únicos. 
-                            Mi enfoque se centra en crear imágenes auténticas que cuenten historias reales y 
-                            preserven emociones que las palabras no pueden expresar.
-                        </p>
-                        
-                        <p class="text-lg">
-                            Me especializo en <strong class="text-brand-600 dark:text-brand-400">retratos</strong>, donde busco capturar la esencia 
-                            de cada persona; <strong class="text-brand-600 dark:text-brand-400">bodas</strong>, donde documento el amor y la emoción 
-                            del día más especial; y <strong class="text-brand-600 dark:text-brand-400">sesiones editoriales</strong>, donde 
-                            experimento con luz y composición para crear arte visual.
-                        </p>
-                        
-                        <div class="bg-white dark:bg-neutral-700 p-6 rounded-xl border-l-4 border-brand-500 shadow-lg">
-                            <h3 class="font-semibold text-lg mb-3 text-neutral-900 dark:text-white">Mi filosofía</h3>
-                            <p class="italic text-neutral-700 dark:text-neutral-300">
-                                "Cada momento es único y merece ser preservado con autenticidad y belleza. 
-                                Trabajo con luz natural siempre que es posible y me enfoco en crear un ambiente 
-                                relajado donde mis clientes puedan ser ellos mismos."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-6 mt-12">
-                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
-                            <div class="text-3xl font-bold text-brand-500 mb-2">200+</div>
-                            <div class="text-sm text-neutral-600 dark:text-neutral-400">Sesiones</div>
-                        </div>
-                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
-                            <div class="text-3xl font-bold text-brand-500 mb-2">5</div>
-                            <div class="text-sm text-neutral-600 dark:text-neutral-400">Años</div>
-                        </div>
-                        <div class="text-center p-4 bg-white dark:bg-neutral-700 rounded-xl shadow-sm hover-lift">
-                            <div class="text-3xl font-bold text-brand-500 mb-2">100%</div>
-                            <div class="text-sm text-neutral-600 dark:text-neutral-400">Satisfacción</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photo -->
-                <div class="reveal">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-brand-400/20 to-brand-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                        
-                        <div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-2xl hover-lift">
-                            <img src="fotos/foto-retrato.jpg" 
-                                 alt="Anastacia - Fotógrafa profesional" 
-                                 class="w-full rounded-xl object-cover aspect-[4/5] transition-transform duration-500 group-hover:scale-105" 
-                                 loading="lazy" />
-                            
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div class="absolute bottom-4 left-4 right-4 text-white">
-                                    <h3 class="font-semibold text-lg">Anastacia</h3>
-                                    <p class="text-sm opacity-90">Fotógrafa profesional</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating decorative elements -->
-                        <div class="absolute -top-6 -right-6 w-12 h-12 bg-brand-400 rounded-full flex items-center justify-center shadow-lg floating">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                        </div>
-                        
-                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-white dark:bg-neutral-800 rounded-xl shadow-lg flex items-center justify-center floating">
-                            <div class="text-center">
-                                <div class="text-lg font-bold text-brand-500">5★</div>
-                                <div class="text-xs text-neutral-600 dark:text-neutral-400">Rating</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- About Me Section (eliminada por duplicación) -->
 
     <!-- Projects Section -->
     <section id="projects" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
@@ -377,7 +243,7 @@
             </div>
 
             <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
                 <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
                     Todas
                 </button>
@@ -393,7 +259,7 @@
             </div>
 
             <!-- Gallery Grid -->
-            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projectsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Images will be loaded here by JavaScript -->
             </div>
         </div>
@@ -637,6 +503,14 @@
             card.addEventListener('click', () => {
                 openModal(photo.src, photo.title, photo.story);
             });
+            
+            // Asegurar que los elementos dinámicos .reveal se activen (evita quedar invisibles)
+            if (typeof observer !== 'undefined' && observer && typeof observer.observe === 'function') {
+                observer.observe(card);
+            } else {
+                // Fallback por si no existe el observer: mostrar inmediatamente
+                card.classList.add('active');
+            }
             
             return card;
         }
