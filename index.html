@@ -153,9 +153,34 @@
 
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     
-    <!-- Full Screen Photo Carousel -->
-    <section data-fullscreen-carousel class="h-screen w-screen overflow-hidden relative">
-        <!-- Solo el carrusel, sin overlay ni contenido encima -->
+    <!-- Hero a pantalla completa: Presentación de la fotógrafa -->
+    <section id="hero" class="relative h-screen w-screen bg-white dark:bg-neutral-900">
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+        <div class="relative h-full max-w-7xl mx-auto px-6 py-10 grid items-center gap-10 lg:grid-cols-2">
+            <!-- Foto principal -->
+            <div class="order-2 lg:order-1">
+                <div class="relative group max-w-xl mx-auto">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-brand-400/20 to-brand-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-2xl">
+                        <img src="fotos/fotoretrato-camaraencara.jpg" alt="Anastacia — Fotógrafa" class="w-full rounded-xl object-cover aspect-[4/5]" />
+                    </div>
+                </div>
+            </div>
+            <!-- Texto de presentación -->
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-neutral-900 dark:text-white">
+                    Hola, soy <span class="text-gradient">Anastacia</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-6 text-neutral-600 dark:text-neutral-300 font-light">Fotógrafa profesional</p>
+                <p class="text-lg md:text-xl mb-10 text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Capturo historias reales con luz natural y una mirada minimalista. Mi objetivo es que cada fotografía se sienta auténtica, elegante y atemporal.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#projects" class="px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200 transition-all duration-300">Ver fotos</a>
+                    <a href="#contact" class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300">Contacto</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Navigation (appears on scroll) -->
@@ -191,29 +216,46 @@
         </div>
     </nav>
 
-    <!-- Hero Content (Photographer Presentation) -->
-    <section class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
+    <!-- Projects Section -->
+    <section id="projects" class="relative z-30 bg-white dark:bg-neutral-900 py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <div class="reveal">
-                    <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-neutral-900 dark:text-white">
-                        <span class="text-gradient">Anastacia</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl mb-8 text-neutral-600 dark:text-neutral-300 font-light">
-                        Fotógrafa Profesional
-                    </p>
-                    <p class="text-lg md:text-xl mb-12 text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-                        "Capturando momentos únicos con autenticidad y belleza. Cada imagen cuenta una historia que merece ser preservada."
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#projects" class="px-8 py-4 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-all duration-300 hover-lift">
-                            Ver mi trabajo
-                        </a>
-                        <a href="#contact" class="px-8 py-4 border border-neutral-300 dark:border-neutral-600 rounded-full font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300 hover-lift">
-                            Contacto
-                        </a>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
+                        Mi trabajo
                     </div>
+                    
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-neutral-900 dark:text-white">
+                        <span class="text-gradient">Projects</span>
+                    </h2>
+                    
+                    <p class="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+                        Cada proyecto es una historia única. Explora mis trabajos más recientes y descubre 
+                        las historias detrás de cada imagen.
+                    </p>
                 </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
+                    Todas
+                </button>
+                <button data-filter="retrato" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
+                    Retratos
+                </button>
+                <button data-filter="bodas" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
+                    Bodas
+                </button>
+                <button data-filter="editorial" class="filter-btn px-6 py-3 rounded-full text-sm font-medium border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all duration-300 hover-lift">
+                    Editorial
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Images will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -422,7 +464,6 @@
 
     <!-- Scripts -->
     <script defer src="assets/js/gallery.js"></script>
-    <script defer src="assets/js/fullscreen-carousel.js"></script>
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
