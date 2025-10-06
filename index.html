@@ -410,63 +410,49 @@
         const filterButtons = document.querySelectorAll('.filter-btn');
         let currentFilter = 'all';
 
-        // Photo data with stories
-        const photoData = [
-            {
-                src: 'fotos/foto-retrato.jpg',
-                title: 'Retrato Profesional',
-                category: 'retrato',
-                story: 'Esta sesión se realizó durante la hora dorada para aprovechar la luz cálida y crear una atmósfera íntima. Busqué capturar la esencia natural de la persona, trabajando con luz natural suave desde una ventana.'
-            },
-            {
-                src: 'fotos/casados-mirandose.jpg',
-                title: 'Momento de Amor',
-                category: 'bodas',
-                story: 'Este beso fue completamente espontáneo, capturé la emoción pura del momento. La luz natural cálida y la composición de regla de tercios ayudaron a crear una imagen que transmite el amor verdadero entre los recién casados.'
-            },
-            {
-                src: 'fotos/kid-retrato.jpg',
-                title: 'Inocencia Infantil',
-                category: 'retrato',
-                story: 'Los niños son los mejores modelos porque no posan, simplemente son ellos mismos. Capturé esta imagen con luz natural y velocidad de obturación alta para congelar el movimiento y preservar la espontaneidad del momento.'
-            },
-            {
-                src: 'fotos/estructura-carrousel.jpg',
-                title: 'Arquitectura Abstracta',
-                category: 'editorial',
-                story: 'Me fascina cómo la luz transforma las estructuras en esculturas de sombras. Esta imagen explora la geometría y los juegos de luz en arquitectura, creando un contraste visual impactante entre luces y sombras.'
-            },
-            {
-                src: 'fotos/espuma-playa.jpg',
-                title: 'Movimiento del Mar',
-                category: 'editorial',
-                story: 'La espuma del mar crea patrones únicos que nunca se repiten, cada ola es diferente. Utilicé velocidad de obturación lenta para crear movimiento fluido y una composición minimalista que captura la textura del mar.'
-            },
-            {
-                src: 'fotos/playa.jpg',
-                title: 'Serenidad Costera',
-                category: 'editorial',
-                story: 'Los atardeceres en la playa ofrecen los colores más hermosos para fotografiar. Esta imagen documenta la serenidad y vastedad del paisaje costero con el horizonte en tercio inferior y luz natural de atardecer.'
-            },
-            {
-                src: 'fotos/monta;a-playa.jpg',
-                title: 'Contraste Natural',
-                category: 'editorial',
-                story: 'La combinación de montaña y mar crea paisajes únicos llenos de texturas. Esta imagen captura la inmensidad de ambos elementos naturales en perfecta armonía.'
-            },
-            {
-                src: 'fotos/hamburguesa-preparando.jpg',
-                title: 'Arte Culinario',
-                category: 'editorial',
-                story: 'La cocina es un laboratorio de texturas, colores y aromas perfectos para fotografiar. Capturé el proceso creativo con primer plano y profundidad de campo reducida.'
-            },
-            {
-                src: 'fotos/pizza-cortando.jpg',
-                title: 'Momento Decisivo',
-                category: 'editorial',
-                story: 'El momento de cortar la pizza es perfecto para capturar texturas y movimiento. Utilicé enfoque selectivo y composición dinámica con líneas diagonales.'
-            }
+        // Generar datos de fotos desde los nombres de archivo (usa todas las imágenes en /fotos)
+        const photoFilenames = [
+            'beso-embarazada-esposos.jpg',
+            'casados-mirandose.jpg',
+            'embarazada-esposo-mirada.jpg',
+            'espuma-playa.jpg',
+            'estructura-carrousel.jpg',
+            'foto-retrato.jpg',
+            'fotoretrato-camaraencara.jpg',
+            'hamburguesa-preparando.jpg',
+            'kid-retrato.jpg',
+            'manos-agarranado-zapatos-bebe.jpg',
+            'manos-casados-anillos.jpg',
+            'marca-producto.jpg',
+            'monta;a-playa.jpg',
+            'pizza-cortando.jpg',
+            'playa.jpg',
+            'retrato.jpg',
         ];
+
+        function filenameToTitle(name) {
+            const base = name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
+            return base.charAt(0).toUpperCase() + base.slice(1);
+        }
+
+        function inferCategory(name) {
+            const n = name.toLowerCase();
+            if (n.includes('boda') || n.includes('casados')) return 'bodas';
+            if (n.includes('retrato')) return 'retrato';
+            if (n.includes('embarazada') || n.includes('bebe')) return 'familia';
+            if (n.includes('producto')) return 'producto';
+            if (n.includes('hamburguesa') || n.includes('pizza')) return 'gastronomia';
+            if (n.includes('playa') || n.includes('monta')) return 'paisaje';
+            if (n.includes('estructura')) return 'editorial';
+            return 'editorial';
+        }
+
+        const photoData = photoFilenames.map(file => ({
+            src: `fotos/${file}`,
+            title: filenameToTitle(file),
+            category: inferCategory(file),
+            story: filenameToTitle(file)
+        }));
 
         function createPhotoCard(photo) {
             const card = document.createElement('div');
@@ -474,15 +460,15 @@
             card.setAttribute('data-category', photo.category);
             
             card.innerHTML = `
-                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-105 bg-white dark:bg-neutral-800">
+                <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-105 bg-white dark:bg-neutral-800 ring-1 ring-white/60 dark:ring-neutral-700">
                     <img src="${photo.src}" 
                          alt="${photo.title}" 
-                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" 
-                         loading="lazy" 
+                         class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover:scale-110" 
+                         loading="lazy" decoding="async"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                     
                     <!-- Fallback si la imagen no carga -->
-                    <div class="w-full h-64 bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-500 dark:text-neutral-400" style="display: none;">
+                    <div class="w-full h-64 sm:h-72 bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-500 dark:text-neutral-400" style="display: none;">
                         <div class="text-center">
                             <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
