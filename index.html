@@ -348,8 +348,8 @@
     <div id="photoModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm">
         <div class="flex items-center justify-center h-full p-4">
             <div class="relative max-w-5xl w-full">
-                <button id="closeModal" class="absolute -top-12 right-0 text-white hover:text-neutral-300 transition-colors">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="closeModal" aria-label="Cerrar" class="absolute top-4 right-4 z-10 text-white hover:text-neutral-200 transition-colors bg-black/60 backdrop-blur px-2 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white/60">
+                    <svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -358,8 +358,8 @@
                     <img id="modalImage" src="" alt="" class="w-full h-auto max-h-[75vh] object-contain bg-black" />
                     
                     <div class="p-6">
-                        <h3 id="modalTitle" class="text-xl font-semibold mb-2 text-neutral-900 dark:text-white"></h3>
-                        <p id="modalStory" class="text-neutral-600 dark:text-neutral-300 leading-relaxed"></p>
+                        <h3 id="modalTitle" class="text-xl md:text-2xl font-semibold mb-2 text-neutral-900 dark:text-white"></h3>
+                        <p id="modalStory" class="text-sm md:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed"></p>
                     </div>
                 </div>
             </div>
@@ -467,6 +467,8 @@
             'pizza-cortando.jpg',
             'playa.jpg',
             'retrato.jpg',
+            'bucana-ron.jpg',
+            'desodorante-fresco.jpg',
         ];
 
         // Descripciones personalizadas por archivo (mostradas al hacer clic)
@@ -482,9 +484,9 @@
             'marca-producto.jpg': 'La música, lenguaje que todos entendemos',
             'estructura-carrousel.jpg': 'Toma de ángulo picado, captura una gran rueda blanca con colores y un cielo azul claro y despejado',
             'monta;a-playa.jpg': 'Olas = Paz',
-            'kid-retrato.jpg': 'Plano medio corto y vertical, captura a un pequeño niño sonriente, sus ojos oscuros miran directamente a la cámara con una chispa de felicidad y picardía.'
-            // 'bucana-ron.jpg': 'Toma cenital (vista desde arriba) mezcla de culturas de consumo y anticipación de un momento social o de ocio al aire libre',
-            // 'desodorante.jpg': 'Fotografía Macro, sensación de frescura, energía masculina limpia'
+            'kid-retrato.jpg': 'Plano medio corto y vertical, captura a un pequeño niño sonriente, sus ojos oscuros miran directamente a la cámara con una chispa de felicidad y picardía.',
+            'bucana-ron.jpg': 'Toma cenital (vista desde arriba) mezcla de culturas de consumo y anticipación de un momento social o de ocio al aire libre',
+            'desodorante-fresco.jpg': 'Fotografía Macro, sensación de frescura, energía masculina limpia'
         };
 
         function filenameToTitle(name) {
@@ -501,6 +503,7 @@
             if (n.includes('hamburguesa') || n.includes('pizza')) return 'gastronomia';
             if (n.includes('playa') || n.includes('monta')) return 'paisaje';
             if (n.includes('estructura')) return 'editorial';
+            if (n.includes('ron') || n.includes('desodorante')) return 'producto';
             return 'editorial';
         }
 
