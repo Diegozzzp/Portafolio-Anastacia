@@ -426,7 +426,8 @@
         function openModal(imageSrc, title, story) {
             modalImage.src = imageSrc;
             modalTitle.textContent = title;
-            modalStory.textContent = story;
+            // Permitir saltos de línea en descripciones personalizadas
+            modalStory.innerHTML = (story || '').toString().replace(/\n/g, '<br>');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
@@ -468,6 +469,24 @@
             'retrato.jpg',
         ];
 
+        // Descripciones personalizadas por archivo (mostradas al hacer clic)
+        const customStories = {
+            'fotoretrato-camaraencara.jpg': 'El mundo a través de un 35mm',
+            'beso-embarazada-esposos.jpg': 'Celebrando el milagro que está por llegar.',
+            'pizza-cortando.jpg': 'Hay secretos que no se cuentan, y hay pizzas que no se comparten.',
+            'casados-mirandose.jpg': 'En el umbral de su nueva vida juntos, la pareja se encuentra envuelta en una luz suave, sus miradas cruzándose como dos almas que finalmente han encontrado su hogar',
+            'manos-casados-anillos.jpg': 'Este plano captura la esencia de un compromiso.\nLas manos, entrelazadas con firmeza y ternura, se convierten en el foco de una promesa sellada',
+            'hamburguesa-preparando.jpg': 'La calidad y el sabor se unen en un solo bocado',
+            'foto-retrato.jpg': 'Capturada en un momento de estilo urbano.\nEsta imagen presenta un retrato de moda de media distancia. La modelo irradia confianza natural bajo la luz ambiental de la calle. Su cabello rizado y voluminoso le enmarca el rostro mientras viste una combinación audaz de texturas',
+            'retrato.jpg': 'Retrato publicitario vibrante y lleno de energía, diseñado para evocar frescura y alegría en torno a la marca Coca-Cola.',
+            'marca-producto.jpg': 'La música, lenguaje que todos entendemos',
+            'estructura-carrousel.jpg': 'Toma de ángulo picado, captura una gran rueda blanca con colores y un cielo azul claro y despejado',
+            'monta;a-playa.jpg': 'Olas = Paz',
+            'kid-retrato.jpg': 'Plano medio corto y vertical, captura a un pequeño niño sonriente, sus ojos oscuros miran directamente a la cámara con una chispa de felicidad y picardía.'
+            // 'bucana-ron.jpg': 'Toma cenital (vista desde arriba) mezcla de culturas de consumo y anticipación de un momento social o de ocio al aire libre',
+            // 'desodorante.jpg': 'Fotografía Macro, sensación de frescura, energía masculina limpia'
+        };
+
         function filenameToTitle(name) {
             const base = name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
             return base.charAt(0).toUpperCase() + base.slice(1);
@@ -489,7 +508,7 @@
             src: `fotos/${file}`,
             title: filenameToTitle(file),
             category: inferCategory(file),
-            story: filenameToTitle(file)
+            story: customStories[file] || filenameToTitle(file)
         }));
 
         function createPhotoCard(photo) {
