@@ -48,8 +48,8 @@
     // Usar object-cover para llenar toda la pantalla sin dejar barras negras
     img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ease-in-out';
     img.style.opacity = isActive ? '1' : '0';
-    // Escalar levemente para evitar cualquier borde visible en diferentes relaciones de aspecto
-    img.style.transform = 'scale(1.04)';
+    // Escalar un poco más para cubrir completamente en pantallas ultra-anchas o ultra-altas
+    img.style.transform = 'scale(1.2)';
     img.style.transformOrigin = 'center center';
     img.style.willChange = 'opacity, transform';
     img.loading = 'eager';
@@ -100,8 +100,9 @@
     let isTransitioning = false;
     let autoPlayTimer = null;
     
-    // Precargar imágenes
+    // Precargar imágenes (primeras de inmediato y luego todas para evitar vacíos en transiciones rápidas)
     preloadImages(images.slice(0, PRELOAD_COUNT));
+    preloadImages(images);
     
     // Crear contenedor de imágenes con fondo negro para mejor contraste
     const imagesContainer = document.createElement('div');
