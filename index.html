@@ -186,54 +186,42 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     <a href="#projects" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-black text-white dark:bg-white dark:text-black px-3 py-2 rounded">Saltar al contenido</a>
     
-    <!-- Hero fullscreen con carrusel de fondo y texto centrado-->
-    <section id="hero" class="relative min-h-[100dvh] w-full overflow-hidden">
-        <!-- Carrusel de fondo -->
-        <div data-fullscreen-carousel class="absolute inset-0"></div>
-        <!-- Overlay para contraste -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10"></div>
-        <!-- Contenido centrado -->
-        <div class="relative z-10 min-h-[100dvh] flex items-center">
-            <div class="w-full max-w-6xl mx-auto px-6 text-center animate-fadeInUp">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/90 backdrop-blur-md ring-1 ring-white/20 mb-6">
-                    <span class="w-2 h-2 bg-brand-400 rounded-full animate-pulse"></span>
-                    Fotógrafa Profesional
-                </div>
-                <h1 class="font-serif text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-                    Anastacia
-                </h1>
-                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-10">
-                    Historias auténticas con luz natural y estética minimalista. Fotografía elegante y atemporal para personas y marcas.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#projects" class="px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-neutral-200 transition-all duration-300 shadow-lg">Ver portafolio</a>
-                    <a href="#contact" class="px-8 py-4 rounded-full border border-white/60 text-white font-medium hover:bg-white/10 transition-all duration-300">Contacto</a>
-                </div>
+    <!-- Album creativo de fotografías (landing) -->
+    <section id="album" class="relative w-full pt-28 pb-12 bg-white dark:bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Encabezado minimal: nombre y botón Sobre mí -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 dark:text-white">Anastacia Mejías</div>
+                <a href="#about" class="px-4 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-sm">Sobre mí</a>
+            </div>
+            <!-- Masonry grid -->
+            <div id="albumGrid" class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+                <!-- Items renderizados por JS -->
             </div>
         </div>
     </section>
 
-    <!-- Navigation (appears on scroll) -->
-    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+    <!-- Navigation (light style) -->
+    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300 bg-white/90 backdrop-blur border-b border-neutral-200 dark:bg-neutral-900/80 dark:border-neutral-800">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <div class="text-white font-serif text-2xl font-semibold tracking-wide">Anastacia</div>
+            <div class="text-neutral-900 dark:text-white font-serif text-2xl font-semibold tracking-wide">Anastacia</div>
             
             <!-- Navigation Links -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">Sobre mí</a>
-                <a href="#projects" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">Portafolio</a>
-                <a href="#contact" class="text-white/90 hover:text-white transition-colors duration-300 font-medium">Contacto</a>
+                <a href="#about" class="text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white transition-colors duration-300 font-medium">Sobre mí</a>
+                <a href="#projects" class="text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white transition-colors duration-300 font-medium">Portafolio</a>
+                <a href="#contact" class="text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white transition-colors duration-300 font-medium">Contacto</a>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="flex items-center gap-3">
-            <button id="themeToggle" class="text-white/90 hover:text-white hidden sm:inline-flex" aria-label="Alternar tema">
+            <button id="themeToggle" class="text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white hidden sm:inline-flex" aria-label="Alternar tema">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
             </button>
-            <button id="mobileMenuBtn" class="md:hidden text-white">
+            <button id="mobileMenuBtn" class="md:hidden text-neutral-900 dark:text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -242,11 +230,11 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-lg z-40 transform -translate-y-full transition-transform duration-300">
+        <div id="mobileMenu" class="md:hidden fixed top-0 left-0 right-0 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg z-40 transform -translate-y-full transition-transform duration-300">
             <div class="px-6 py-8 space-y-6">
-                <a href="#about" class="block text-white text-xl font-medium">Sobre mí</a>
-                <a href="#projects" class="block text-white text-xl font-medium">Portafolio</a>
-                <a href="#contact" class="block text-white text-xl font-medium">Contacto</a>
+                <a href="#about" class="block text-neutral-900 dark:text-white text-xl font-medium">Sobre mí</a>
+                <a href="#projects" class="block text-neutral-900 dark:text-white text-xl font-medium">Portafolio</a>
+                <a href="#contact" class="block text-neutral-900 dark:text-white text-xl font-medium">Contacto</a>
             </div>
         </div>
     </nav>
@@ -411,18 +399,6 @@
 
     <!-- Scripts -->
     <script>
-        // Limitar imágenes del carrusel a una selección curada y mantener calidad
-        window.PORTFOLIO_IMAGE_SRCS = [
-            'fotos/playa.jpg',
-            'fotos/monta;a-playa.jpg',
-            'fotos/estructura-carrousel.jpg',
-            'fotos/espuma-playa.jpg',
-            'fotos/retrato.jpg',
-            'fotos/marca-producto.jpg',
-        ];
-    </script>
-    <script defer src="assets/js/fullscreen-carousel.js"></script>
-    <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -570,6 +546,59 @@
             story: customStories[file] || filenameToTitle(file)
         }));
 
+        // Album (masonry) landing render
+        const albumGrid = document.getElementById('albumGrid');
+        function createAlbumItem(photo) {
+            const wrap = document.createElement('div');
+            wrap.className = 'group mb-4 break-inside-avoid cursor-pointer reveal';
+
+            const frame = document.createElement('div');
+            frame.className = 'relative overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-500';
+
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.title;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.className = 'w-full h-auto block transform transition-transform duration-500 group-hover:scale-[1.03]';
+            img.onerror = () => { wrap.style.display = 'none'; };
+
+            // Overlay degradado + título al hover
+            const overlay = document.createElement('div');
+            overlay.className = 'pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500';
+
+            const caption = document.createElement('div');
+            caption.className = 'pointer-events-none absolute bottom-2 left-2 right-2 text-white drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-500';
+            caption.innerHTML = `<div class="text-sm md:text-base font-medium">${photo.title}</div>`;
+
+            frame.appendChild(img);
+            frame.appendChild(overlay);
+            frame.appendChild(caption);
+            wrap.appendChild(frame);
+
+            // Click abre modal
+            wrap.addEventListener('click', () => openModal(photo.src, photo.title, photo.story));
+
+            // Animación de entrada (usar IntersectionObserver existente)
+            if (typeof observer !== 'undefined' && observer && typeof observer.observe === 'function') {
+                observer.observe(wrap);
+            } else {
+                wrap.classList.add('active');
+            }
+
+            return wrap;
+        }
+
+        function renderAlbum() {
+            if (!albumGrid) return;
+            albumGrid.innerHTML = '';
+            // Mostrar todas las fotos en el álbum inicial
+            photoData.forEach(photo => {
+                albumGrid.appendChild(createAlbumItem(photo));
+            });
+        }
+        renderAlbum();
+
         function createPhotoCard(photo) {
             const card = document.createElement('div');
             card.className = 'group cursor-pointer reveal hover-lift';
@@ -637,18 +666,12 @@
             });
         });
 
-        // Initialize gallery
+        // Initialize gallery (Portafolio section)
         renderGallery();
 
         // Navbar: siempre visible; agrega fondo al hacer scroll
         const mainNav = document.getElementById('mainNav');
-        function updateNavBg() {
-            if (window.scrollY > 80) {
-                mainNav.classList.add('bg-black/70', 'backdrop-blur-md');
-            } else {
-                mainNav.classList.remove('bg-black/70', 'backdrop-blur-md');
-            }
-        }
+        function updateNavBg() { /* navbar ya es clara por defecto; no alternar fondo */ }
         updateNavBg();
         window.addEventListener('scroll', updateNavBg);
 
