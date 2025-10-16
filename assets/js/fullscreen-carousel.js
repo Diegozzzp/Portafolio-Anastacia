@@ -48,6 +48,10 @@
     // Usar object-cover para llenar toda la pantalla sin dejar barras negras
     img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ease-in-out';
     img.style.opacity = isActive ? '1' : '0';
+    // Escalar levemente para evitar cualquier borde visible en diferentes relaciones de aspecto
+    img.style.transform = 'scale(1.04)';
+    img.style.transformOrigin = 'center center';
+    img.style.willChange = 'opacity, transform';
     img.loading = 'eager';
     img.decoding = 'async';
     img.style.imageRendering = 'high-quality';
