@@ -45,7 +45,8 @@
     const img = document.createElement('img');
     img.src = src;
     img.alt = 'Fotografía profesional';
-    img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ease-in-out';
+    // Usar object-contain para evitar recortes y mostrar la imagen completa con fondo negro
+    img.className = 'absolute inset-0 w-full h-full object-contain transition-opacity duration-1200 ease-in-out';
     img.style.opacity = isActive ? '1' : '0';
     img.loading = 'eager';
     img.decoding = 'async';
@@ -58,31 +59,31 @@
   // Crear controles de navegación simples y elegantes
   function createControls(container, totalImages) {
     const controlsContainer = document.createElement('div');
-    controlsContainer.className = 'absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-8';
-    
-    // Botón anterior elegante
+    controlsContainer.className = 'absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-6';
+
+    // Botón anterior discreto y elegante
     const prevBtn = document.createElement('button');
-    prevBtn.className = 'w-20 h-20 rounded-full bg-black/20 backdrop-blur-lg border-2 border-white/30 text-white hover:bg-black/30 hover:scale-110 transition-all duration-500 flex items-center justify-center group shadow-2xl';
+    prevBtn.className = 'w-12 h-12 rounded-full bg-black/10 backdrop-blur-md border border-white/20 text-white opacity-70 hover:opacity-100 hover:bg-black/20 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white/30';
     prevBtn.innerHTML = `
-      <svg class="w-10 h-10 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
     `;
     prevBtn.setAttribute('aria-label', 'Imagen anterior');
-    
-    // Botón siguiente elegante
+
+    // Botón siguiente discreto y elegante
     const nextBtn = document.createElement('button');
-    nextBtn.className = 'w-20 h-20 rounded-full bg-black/20 backdrop-blur-lg border-2 border-white/30 text-white hover:bg-black/30 hover:scale-110 transition-all duration-500 flex items-center justify-center group shadow-2xl';
+    nextBtn.className = 'w-12 h-12 rounded-full bg-black/10 backdrop-blur-md border border-white/20 text-white opacity-70 hover:opacity-100 hover:bg-black/20 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white/30';
     nextBtn.innerHTML = `
-      <svg class="w-10 h-10 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     `;
     nextBtn.setAttribute('aria-label', 'Imagen siguiente');
-    
+
     controlsContainer.appendChild(prevBtn);
     controlsContainer.appendChild(nextBtn);
-    
+
     return { controlsContainer, prevBtn, nextBtn };
   }
 
