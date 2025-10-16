@@ -45,8 +45,8 @@
     const img = document.createElement('img');
     img.src = src;
     img.alt = 'Fotografía profesional';
-    // Usar object-contain para evitar recortes y mostrar la imagen completa con fondo negro
-    img.className = 'absolute inset-0 w-full h-full object-contain transition-opacity duration-1200 ease-in-out';
+    // Usar object-cover para llenar toda la pantalla sin dejar barras negras
+    img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1200 ease-in-out';
     img.style.opacity = isActive ? '1' : '0';
     img.loading = 'eager';
     img.decoding = 'async';
