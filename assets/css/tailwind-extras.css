@@ -295,3 +295,176 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===================================
+   MOBILE-FIRST RESPONSIVE OPTIMIZATIONS
+   =================================== */
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices for better performance */
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  /* Larger touch targets for better usability */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove transform on carousel images for smoother scrolling */
+  #heroCarousel img {
+    transform: none !important;
+  }
+}
+
+/* Small mobile phones (320px - 374px) */
+@media (max-width: 374px) {
+  /* Extra small text adjustments */
+  .font-serif {
+    letter-spacing: -0.02em;
+  }
+  
+  /* Tighter spacing for very small screens */
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile landscape optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+  /* Reduce vertical padding in landscape */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Smaller hero height in landscape */
+  #hero {
+    min-height: 100vh;
+  }
+  
+  /* Hide scroll indicator in landscape */
+  #hero .animate-bounce {
+    display: none;
+  }
+}
+
+/* Tablet optimization (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Better grid layouts for tablets */
+  #projectsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  /* Optimize masonry for tablets */
+  #albumGrid {
+    column-count: 2;
+  }
+}
+
+/* Prevent layout shift on scroll */
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Safe area insets for notched devices (iPhone X+) */
+@supports (padding-top: env(safe-area-inset-top)) {
+  #mainNav {
+    padding-top: calc(env(safe-area-inset-top) + 1rem);
+  }
+  
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid currentColor;
+  }
+  
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Prevent text from being too small */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Better tap targets */
+  .filter-btn {
+    padding: 0.625rem 1.25rem;
+  }
+  
+  /* Stack badges vertically on very small screens */
+  .flex.flex-wrap.gap-2 > span {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  
+  /* Optimize mobile menu */
+  #mobileMenu {
+    overscroll-behavior: contain;
+  }
+  
+  /* Better image aspect ratios for mobile */
+  .project-card img {
+    aspect-ratio: 3/4;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Better modal on mobile */
+  #photoModal .max-w-6xl {
+    max-width: 100%;
+  }
+}
+
+/* Optimize for small screens in portrait */
+@media (max-width: 640px) and (orientation: portrait) {
+  /* Make hero text more readable */
+  #hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.1;
+  }
+  
+  #hero p {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+  
+  /* Better spacing for mobile */
+  section {
+    scroll-margin-top: 4rem;
+  }
+}
