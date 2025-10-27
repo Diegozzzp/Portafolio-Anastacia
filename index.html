@@ -610,14 +610,46 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         
+        // Helpers to lock/unlock body scroll when menu is open
+        function lockBodyScroll() {
+            document.body.dataset.prevOverflow = document.body.style.overflow || '';
+            document.body.style.overflow = 'hidden';
+            document.body.style.touchAction = 'none';
+        }
+
+        function unlockBodyScroll() {
+            document.body.style.overflow = document.body.dataset.prevOverflow || '';
+            document.body.style.touchAction = '';
+            delete document.body.dataset.prevOverflow;
+        }
+
+        function setMenuState(isOpen) {
+            mobileMenu.classList.toggle('-translate-y-full', !isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+            if (isOpen) lockBodyScroll(); else unlockBodyScroll();
+        }
+
+        // Initialize ARIA state
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('-translate-y-full');
+            const willOpen = mobileMenu.classList.contains('-translate-y-full');
+            setMenuState(willOpen);
         });
 
         // Close mobile menu when clicking on links
         mobileMenu.addEventListener('click', (e) => {
             if (e.target.tagName === 'A') {
-                mobileMenu.classList.add('-translate-y-full');
+                setMenuState(false);
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                setMenuState(false);
             }
         });
 
