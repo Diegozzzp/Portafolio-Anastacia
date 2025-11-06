@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="fotos/foto-retrato.jpg" />
 
     <!-- Preload primera imagen del hero para mejorar LCP -->
-    <link rel="preload" as="image" href="fotos/foto-retrato.jpg" imagesrcset="fotos/foto-retrato.jpg" />
+    <link rel="preload" as="image" href="fotos/Ana-manos adelante.jpg" imagesrcset="fotos/Ana-manos adelante.jpg" />
 
     <!-- Modo oscuro persistente (evita FOUC) -->
     <script>
@@ -188,10 +188,10 @@
     
     <!-- Hero Section con efecto cinematográfico -->
     <section id="hero" class="relative w-full h-screen overflow-hidden bg-black">
-        <!-- Carousel de fondo con overlay artístico -->
-        <div class="absolute inset-0">
-            <div id="heroCarousel" class="absolute inset-0 scale-105">
-                <!-- Imágenes insertadas por JS -->
+        <!-- Fondo con imagen única (sin carrusel), preservando tamaño original -->
+        <div class="absolute inset-0 bg-black">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <img src="fotos/Ana-manos adelante.jpg" alt="Foto destacada: Ana manos adelante" class="max-h-full max-w-full object-contain mx-auto" loading="eager" decoding="async" />
             </div>
             <!-- Overlay degradado artístico -->
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
@@ -338,7 +338,7 @@
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                         <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-neutral-200/50 dark:border-neutral-800/50 bg-white dark:bg-neutral-900">
-                            <img src="fotos/Anastacia-fotografa.jpg" alt="Retrato de la fotógrafa Anastacia Mejías" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+                            <img src="fotos/Ana-manos adelante.jpg" alt="Retrato de la fotógrafa: Ana manos adelante" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                             <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                         </div>
                     </div>
@@ -954,41 +954,7 @@
             }
         }
 
-        // Hero Carousel
-        (function initHeroCarousel() {
-            const heroCarousel = document.getElementById('heroCarousel');
-            if (!heroCarousel) return;
-
-            const images = photoData.slice(0, 8).map(photo => photo.src);
-            if (images.length === 0) return;
-
-            let currentIndex = 0;
-            const imageElements = [];
-
-            // Crear elementos de imagen
-            images.forEach((src, index) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = 'Fotografía de portafolio';
-                img.className = 'absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out';
-                img.style.opacity = index === 0 ? '1' : '0';
-                img.loading = index < 2 ? 'eager' : 'lazy';
-                heroCarousel.appendChild(img);
-                imageElements.push(img);
-            });
-
-            // Función para cambiar imagen
-            function changeImage() {
-                const prevIndex = currentIndex;
-                currentIndex = (currentIndex + 1) % images.length;
-
-                imageElements[prevIndex].style.opacity = '0';
-                imageElements[currentIndex].style.opacity = '1';
-            }
-
-            // Cambiar cada 5 segundos
-            setInterval(changeImage, 5000);
-        })();
+        // Carrusel del hero deshabilitado: ahora usamos una imagen única para preservar tamaño y calidad
     </script>
 </body>
 </html>
