@@ -17,8 +17,10 @@
     <meta name="twitter:description" content="Fotografía elegante y atemporal: retratos, bodas y editorial." />
     <meta name="twitter:image" content="fotos/foto-retrato.jpg" />
 
-    <!-- Preload primera imagen del hero para mejorar LCP -->
-    <link rel="preload" as="image" href="fotos/Ana-manos adelante.jpg" imagesrcset="fotos/Ana-manos adelante.jpg" />
+    <!-- Preload imágenes principales del hero para mejorar LCP -->
+    <link rel="preload" as="image" href="fotos/foto-retrato.jpg" />
+    <link rel="preload" as="image" href="fotos/casados-mirandose.jpg" />
+    <link rel="preload" as="image" href="fotos/Ana-manos adelante.jpg" />
 
     <!-- Modo oscuro persistente (evita FOUC) -->
     <script>
@@ -180,6 +182,27 @@
         .floating:nth-child(3) {
             animation-delay: 4s;
         }
+
+        /* Hero Bento Grid - animaciones de entrada */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Posicionamiento relativo para overlays */
+        #hero .group {
+            position: relative;
+        }
     </style>
 </head>
 
@@ -188,15 +211,70 @@
     
     <!-- Hero Section con efecto cinematográfico -->
     <section id="hero" class="relative w-full h-screen overflow-hidden bg-black">
-        <!-- Fondo con imagen única (sin carrusel), preservando tamaño original -->
+        <!-- Mosaico de fotos tipo Bento Box (impactante y moderno) -->
         <div class="absolute inset-0 bg-black">
-            <div class="absolute inset-0 flex items-center justify-center">
-                <img src="fotos/Ana-manos adelante.jpg" alt="Foto destacada: Ana manos adelante" class="max-h-full max-w-full object-contain mx-auto" loading="eager" decoding="async" />
+            <!-- Grid asimétrico responsive -->
+            <div class="absolute inset-0 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 grid-rows-6 gap-2 sm:gap-3 p-2 sm:p-3">
+                <!-- Foto 1: Grande vertical izquierda -->
+                <div class="col-span-1 sm:col-span-1 lg:col-span-4 row-span-3 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.1s; animation-fill-mode: backwards;">
+                    <img src="fotos/foto-retrato.jpg" alt="Retrato" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 2: Horizontal superior centro -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-5 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.2s; animation-fill-mode: backwards;">
+                    <img src="fotos/casados-mirandose.jpg" alt="Bodas" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 3: Cuadrado superior derecha -->
+                <div class="hidden lg:block lg:col-span-3 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.3s; animation-fill-mode: backwards;">
+                    <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 4: Ana manos adelante (destacada) -->
+                <div class="col-span-1 sm:col-span-1 lg:col-span-3 row-span-3 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.4s; animation-fill-mode: backwards;">
+                    <img src="fotos/Ana-manos adelante.jpg" alt="Ana manos adelante" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 5: Horizontal centro -->
+                <div class="col-span-1 sm:col-span-2 lg:col-span-5 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.5s; animation-fill-mode: backwards;">
+                    <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 6: Pequeña inferior izquierda -->
+                <div class="col-span-1 sm:col-span-1 lg:col-span-4 row-span-1 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.6s; animation-fill-mode: backwards;">
+                    <img src="fotos/pizza-cortando.jpg" alt="Gastronomía" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 7: Producto marca -->
+                <div class="hidden lg:block lg:col-span-3 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.7s; animation-fill-mode: backwards;">
+                    <img src="fotos/marca-producto.jpg" alt="Producto" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 8: Embarazada -->
+                <div class="hidden sm:block sm:col-span-1 lg:col-span-2 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.8s; animation-fill-mode: backwards;">
+                    <img src="fotos/beso-embarazada-esposos.jpg" alt="Maternidad" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Foto 9: Playa -->
+                <div class="hidden sm:block sm:col-span-1 lg:col-span-3 row-span-1 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.9s; animation-fill-mode: backwards;">
+                    <img src="fotos/espuma-playa.jpg" alt="Naturaleza" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
             </div>
-            <!-- Overlay degradado artístico -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
+            
+            <!-- Overlay degradado artístico (más sutil para que se vean las fotos) -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 pointer-events-none"></div>
+            
             <!-- Efecto de grano de película -->
-            <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 400 400%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noiseFilter%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%273%27 numOctaves=%274%27 /%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noiseFilter)%27/%3E%3C/svg%3E');"></div>
+            <div class="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 400 400%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noiseFilter%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%273%27 numOctaves=%274%27 /%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noiseFilter)%27/%3E%3C/svg%3E');"></div>
         </div>
         
         <!-- Contenido del hero -->
