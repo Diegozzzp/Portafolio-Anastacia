@@ -55,16 +55,16 @@
                     },
                     colors: {
                         brand: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            200: '#fed7aa',
-                            300: '#fdba74',
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
-                            700: '#c2410c',
-                            800: '#9a3412',
-                            900: '#7c2d12',
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c3d66',
                         }
                     },
                     animation: {
@@ -117,11 +117,11 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #fb923c;
+            background: #0284c7;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #f97316;
+            background: #0369a1;
         }
 
         /* Glassmorphism effect */
@@ -138,7 +138,7 @@
 
         /* Text gradient */
         .text-gradient {
-            background: linear-gradient(135deg, #f97316, #fb923c, #fdba74);
+            background: linear-gradient(135deg, #0ea5e9, #38bdf8, #7dd3fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -209,72 +209,16 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     <a href="#projects" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-black text-white dark:bg-white dark:text-black px-3 py-2 rounded">Saltar al contenido</a>
     
-    <!-- Hero Section con efecto cinematográfico -->
-    <section id="hero" class="relative w-full h-screen overflow-hidden bg-black">
-        <!-- Mosaico de fotos tipo Bento Box (impactante y moderno) -->
-        <div class="absolute inset-0 bg-black">
-            <!-- Grid asimétrico responsive -->
-            <div class="absolute inset-0 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 grid-rows-6 gap-2 sm:gap-3 p-2 sm:p-3">
-                <!-- Foto 1: Grande vertical izquierda -->
-                <div class="col-span-1 sm:col-span-1 lg:col-span-4 row-span-3 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.1s; animation-fill-mode: backwards;">
-                    <img src="fotos/foto-retrato.jpg" alt="Retrato" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 2: Horizontal superior centro -->
-                <div class="col-span-1 sm:col-span-2 lg:col-span-5 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.2s; animation-fill-mode: backwards;">
-                    <img src="fotos/casados-mirandose.jpg" alt="Bodas" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 3: Cuadrado superior derecha -->
-                <div class="hidden lg:block lg:col-span-3 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.3s; animation-fill-mode: backwards;">
-                    <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 4: Ana manos adelante (destacada) -->
-                <div class="col-span-1 sm:col-span-1 lg:col-span-3 row-span-3 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.4s; animation-fill-mode: backwards;">
-                    <img src="fotos/Ana-manos adelante.jpg" alt="Ana manos adelante" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 5: Horizontal centro -->
-                <div class="col-span-1 sm:col-span-2 lg:col-span-5 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.5s; animation-fill-mode: backwards;">
-                    <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 6: Pequeña inferior izquierda -->
-                <div class="col-span-1 sm:col-span-1 lg:col-span-4 row-span-1 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.6s; animation-fill-mode: backwards;">
-                    <img src="fotos/pizza-cortando.jpg" alt="Gastronomía" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 7: Producto marca -->
-                <div class="hidden lg:block lg:col-span-3 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.7s; animation-fill-mode: backwards;">
-                    <img src="fotos/marca-producto.jpg" alt="Producto" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 8: Embarazada -->
-                <div class="hidden sm:block sm:col-span-1 lg:col-span-2 row-span-2 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.8s; animation-fill-mode: backwards;">
-                    <img src="fotos/beso-embarazada-esposos.jpg" alt="Maternidad" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                <!-- Foto 9: Playa -->
-                <div class="hidden sm:block sm:col-span-1 lg:col-span-3 row-span-1 overflow-hidden rounded-lg sm:rounded-xl group animate-fadeInUp" style="animation-delay: 0.9s; animation-fill-mode: backwards;">
-                    <img src="fotos/espuma-playa.jpg" alt="Naturaleza" class="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-700 group-hover:brightness-110" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-            </div>
+    <!-- Hero Section con diseño minimalista elegante -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+        <!-- Fondo con gradiente sutil y elementos decorativos -->
+        <div class="absolute inset-0">
+            <!-- Elementos decorativos geométricos -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl"></div>
             
-            <!-- Overlay degradado artístico (más sutil para que se vean las fotos) -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 pointer-events-none"></div>
-            
-            <!-- Efecto de grano de película -->
-            <div class="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 400 400%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noiseFilter%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%273%27 numOctaves=%274%27 /%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noiseFilter)%27/%3E%3C/svg%3E');"></div>
+            <!-- Grid de líneas sutil -->
+            <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(0deg, transparent 24%, rgba(255,255,255,.05) 25%, rgba(255,255,255,.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.05) 75%, rgba(255,255,255,.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,.05) 25%, rgba(255,255,255,.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.05) 75%, rgba(255,255,255,.05) 76%, transparent 77%, transparent); background-size: 50px 50px;"></div>
         </div>
         
         <!-- Contenido del hero -->
@@ -288,22 +232,22 @@
             </div>
             
             <!-- Título principal con efecto artístico -->
-            <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-4 sm:mb-6 tracking-tight animate-slide-up opacity-0 leading-tight" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
-                <span class="inline-block hover:text-brand-300 transition-colors duration-500">Anastacia</span>
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight animate-slide-up opacity-0 leading-tight" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+                <span class="inline-block">Fotógrafa de</span>
                 <br>
-                <span class="inline-block text-brand-200 hover:text-white transition-colors duration-500">Mejías</span>
+                <span class="inline-block text-brand-300">personas, historias y marcas</span>
             </h1>
             
             <!-- Subtítulo elegante -->
             <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-200 font-light max-w-2xl mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4 animate-fade-in opacity-0" style="animation-delay: 0.6s; animation-fill-mode: forwards;">
-                Capturando la esencia de cada momento con luz, emoción y autenticidad
+                Capturando momentos auténticos con luz y emoción
             </p>
             
             <!-- Botones de acción con efectos -->
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0 animate-slide-up opacity-0" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
-                <a href="#projects" class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full font-medium overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 text-center text-sm sm:text-base">
+                <a href="#projects" class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-brand-500 text-white rounded-full font-medium overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/30 hover:-translate-y-1 text-center text-sm sm:text-base">
                     <span class="relative z-10">Ver Portafolio</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-400 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </a>
                 <a href="#about" class="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 text-white rounded-full font-medium backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-500 hover:-translate-y-1 text-center text-sm sm:text-base">
                     Conocer más
@@ -435,9 +379,6 @@
                         </p>
                         <p class="text-neutral-700 dark:text-neutral-300">
                             Para tu evento especial capturo momentos importantes, de documentación de historias, de amor, prenatal entre otros. Mi enfoque es <span class="font-semibold text-neutral-900 dark:text-white">discreto y espontáneo</span>, capturando los detalles íntimos y la energía real de tu día.
-                        </p>
-                        <p class="text-neutral-700 dark:text-neutral-300">
-                            También trabajamos contigo para crear <span class="font-semibold text-neutral-900 dark:text-white">contenido visual profesional</span> que atraiga a tu cliente ideal y potencie tus ventas, lo que se conoce como fotografía publicitaria o comercial.
                         </p>
                     </div>
 

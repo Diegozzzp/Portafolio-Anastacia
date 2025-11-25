@@ -49,7 +49,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes shimmer {
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
@@ -57,12 +56,12 @@
 
 @keyframes glow {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(251, 146, 60, 0.3),
-                0 0 40px rgba(251, 146, 60, 0.1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3),
+                0 0 40px rgba(14, 165, 233, 0.1);
   }
   50% { 
-    box-shadow: 0 0 30px rgba(251, 146, 60, 0.5),
-                0 0 60px rgba(251, 146, 60, 0.2);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.5),
+                0 0 60px rgba(14, 165, 233, 0.2);
   }
 }
 
@@ -132,7 +131,7 @@
 
 /* Gradientes de texto artísticos */
 .text-gradient {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fdba74 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -147,7 +146,7 @@
 
 /* Efecto de texto hover con gradiente */
 .hover\:text-gradient:hover {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fdba74 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -197,7 +196,7 @@ img {
 }
 
 .shadow-artistic {
-  box-shadow: 0 20px 60px rgba(251, 146, 60, 0.15),
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.15),
               0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -208,12 +207,12 @@ html {
 
 /* Selección de texto personalizada */
 ::selection {
-  background-color: rgba(251, 146, 60, 0.3);
+  background-color: rgba(14, 165, 233, 0.3);
   color: inherit;
 }
 
 ::-moz-selection {
-  background-color: rgba(251, 146, 60, 0.3);
+  background-color: rgba(14, 165, 233, 0.3);
   color: inherit;
 }
 
@@ -256,7 +255,7 @@ html {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(251, 146, 60, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
@@ -268,9 +267,9 @@ html {
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(251, 146, 60, 0.05));
-  border-color: rgba(251, 146, 60, 0.5);
-  color: #f97316;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.05));
+  border-color: rgba(14, 165, 233, 0.5);
+  color: #0ea5e9;
   font-weight: 700;
 }
 
