@@ -47,44 +47,19 @@
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: {
                 extend: {
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
                         'serif': ['Playfair Display', 'serif'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            700: '#075985',
-                            800: '#0c3d66',
-                            900: '#082d4a',
-                        }
-                    },
                     animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'scale-in': 'scaleIn 0.6s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
                         scaleIn: {
                             '0%': { opacity: '0', transform: 'scale(0.95)' },
+
                             '100%': { opacity: '1', transform: 'scale(1)' },
                         },
                         float: {
@@ -138,7 +113,7 @@
 
         /* Text gradient */
         .text-gradient {
-            background: linear-gradient(135deg, #0369a1, #0284c7, #38bdf8);
+            background: linear-gradient(135deg, #6b6359, #8b8276, #a89f94);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -230,28 +205,28 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
                 <!-- Imagen 1: Grande -->
                 <div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64 md:h-96">
-                    <img src="fotos/casados-mirandose.jpg" alt="Bodas" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="font-semibold text-sm sm:text-base">Bodas & Eventos</p>
-                    </div>
-                </div>
-                
-                <!-- Imagen 2 -->
-                <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64">
-                    <img src="fotos/foto-retrato.jpg" alt="Retratos" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
+                    <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p class="font-semibold text-sm sm:text-base">Retratos</p>
                     </div>
                 </div>
                 
-                <!-- Imagen 3 -->
+                <!-- Imagen 2 -->
                 <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64">
-                    <img src="fotos/marca-producto.jpg" alt="Marcas" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <img src="fotos/beso-embarazada-esposos.jpg" alt="Maternidad" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="font-semibold text-sm sm:text-base">Marcas & Productos</p>
+                        <p class="font-semibold text-sm sm:text-base">Momentos Especiales</p>
+                    </div>
+                </div>
+                
+                <!-- Imagen 3 -->
+                <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64">
+                    <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="font-semibold text-sm sm:text-base">Editorial & Lifestyle</p>
                     </div>
                 </div>
             </div>
