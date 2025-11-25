@@ -1,200 +1,78 @@
-# Portafolio Fotográfico — Sitio estático listo para GitHub Pages
+# Portafolio de Anastacia Mejías — Fotógrafa
 
-Sitio estático (HTML+CSS+JS) para un portafolio de fotógrafa junior. **Diseño creativo y moderno** con hero section impactante, galería con descripciones detalladas, modo claro/oscuro y lightbox interactivo. Publicable gratis en GitHub Pages.
+## 📸 La Historia detrás de este proyecto
 
-## ✨ Características destacadas
+Hace poco, Anastacia, una fotógrafa talentosa y apasionada, se acercó a mí con una idea clara: necesitaba un espacio en internet donde mostrar su trabajo. No era solo un portafolio más, era su oportunidad de conectar con clientes y compartir su visión del mundo a través de la lente.
 
-- **Hero section creativo** con foto de la fotógrafa, estadísticas y elementos decorativos
-- **Descripciones detalladas** para cada foto: propósito, técnica utilizada y historia detrás
-- **Lightbox expandido** con información completa y navegación inteligente
-- **Sección "Sobre mí"** mejorada con biografía personal y galería de trabajo
-- **Diseño responsive** con animaciones suaves y efectos visuales modernos
-- **Modo claro/oscuro** con persistencia en localStorage
-- **Filtros por categoría** y búsqueda en tiempo real
-- **Optimización de imágenes** con WebP y srcset
+Mientras hablábamos sobre el proyecto, Anastacia me explicó algo que realmente me marcó: **la fotografía no es solo capturar imágenes, es inmortalizar momentos**. Esos instantes fugaces que pasan rápido pero que significan todo para las personas. Una sonrisa genuina en una boda, la ternura de un abrazo, la belleza de un atardecer, la conexión entre personas que se aman. Todo eso desaparece en segundos, pero gracias a la fotografía, esos recuerdos quedan para siempre.
 
-## Estructura
+Es por eso que decidimos crear algo especial. No solo un sitio bonito, sino una experiencia que reflejara la esencia de su trabajo: **autenticidad, emoción y luz**.
+
+## 🎯 ¿Qué es este proyecto?
+
+Este es el portafolio web de Anastacia Mejías, una fotógrafa que se especializa en:
+
+- **Retratos auténticos**: Capturando la esencia y personalidad en cada rostro
+- **Bodas y eventos**: Documentando momentos especiales con un enfoque discreto y espontáneo
+- **Contenido visual para marcas**: Creando historias visuales que conectan con audiencias
+
+## ✨ Lo que hace especial este sitio
+
+- **Diseño elegante y moderno**: Una interfaz limpia que deja que las fotos hablen por sí solas
+- **Responsive en todos los dispositivos**: Se ve perfecta en móvil, tablet y desktop
+- **Modo oscuro/claro**: Para que cada visitante disfrute en su entorno preferido
+- **Galería interactiva**: Explora el trabajo de Anastacia de forma intuitiva
+- **Sección "Sobre mí"**: Conoce la historia y filosofía detrás de cada foto
+- **Contacto directo**: Fácil de conectar para consultas y proyectos
+
+## 🛠️ Cómo está hecho
+
+Este proyecto fue construido con:
+
+- **HTML5**: Estructura semántica y accesible
+- **Tailwind CSS**: Estilos modernos y responsivos
+- **JavaScript vanilla**: Interactividad sin dependencias pesadas
+- **Diseño responsive**: Adaptado para cualquier pantalla
+
+## 📁 Estructura del proyecto
 
 ```
 .
-├─ index.html
-├─ 404.html
+├─ index.html              # La página principal
 ├─ assets/
 │  ├─ css/
-│  │  └─ tailwind-extras.css
+│  │  └─ tailwind-extras.css    # Estilos personalizados
 │  └─ js/
-│     └─ gallery.js
-└─ fotos/             # coloca tus fotos reales aquí (ya existe en el repo)
+│     └─ fullscreen-carousel.js # Interactividad
+└─ fotos/                  # Galería de fotografías
 ```
 
-- Puedes mantener las fotos en `fotos/` (recomendado). Si prefieres `assets/photos/`, crea la carpeta y ajusta rutas en `assets/js/gallery.js`.
+## 🚀 Cómo usar este proyecto
 
-## Cómo colocar tus fotos
+1. **Ver el sitio**: Abre `index.html` en tu navegador
+2. **Explorar la galería**: Navega por las diferentes categorías de trabajo
+3. **Conocer a Anastacia**: Lee su historia en la sección "Sobre mí"
+4. **Contactar**: Usa el formulario de contacto para consultas
 
-1. Copia tus imágenes a `fotos/`.
-2. Nombra los archivos de forma descriptiva, por ejemplo:
-   - `retrato_marta-barcelona-2024.jpg`
-   - `bodas_laura-jorge-anillos-2023.jpg`
-   - `producto_cafe-pack-2024.png`
-3. Las categorías se infieren por palabras del nombre: `retrato`, `boda`, `anillo`, `embaraz`, `playa`, `producto`, etc. Si no coincide, caerá en `varios`.
-4. El título se genera del nombre de archivo (guiones/bajos → espacios). La metainformación (ubicación/año) se intenta deducir si aparece en el nombre.
+## 💡 Por qué importa este proyecto
 
-## WebP + srcset/sizes y `<picture>`
+En un mundo donde todo es efímero, la fotografía es un acto de amor. Cada foto que Anastacia toma es un compromiso con sus clientes: **preservar lo que importa**. Este sitio web es la puerta de entrada para que más personas descubran su trabajo y confíen en ella para capturar sus momentos más preciosos.
 
-Para mejor rendimiento, genera 3 tamaños por foto y su versión WebP. Nomenclatura sugerida:
+## 🎨 Filosofía del diseño
 
-- `nombre-480.webp` (o `.jpg`), `nombre-1200.webp`, `nombre-2560.webp`
-- Tamaños objetivo: 480w (móvil), 1200w (tablet/desktop medio), 2560w (desktop grande)
+El sitio fue diseñado pensando en:
 
-Ejemplo de uso en HTML (ya incluido en el hero):
+- **Simplicidad**: No distracciones, solo las fotos y la historia
+- **Elegancia**: Colores tierra, tipografía refinada, espacios respetados
+- **Accesibilidad**: Fácil de navegar para todos
+- **Velocidad**: Carga rápida para una mejor experiencia
 
-```html
-<picture>
-  <source type="image/webp" srcset="fotos/foto-retrato-480.webp 480w, fotos/foto-retrato-1200.webp 1200w, fotos/foto-retrato-2560.webp 2560w" sizes="(max-width: 768px) 100vw, 40vw" />
-  <img src="fotos/foto-retrato.jpg" alt="Retrato" loading="eager" decoding="async" />
-  </picture>
-```
+## 📞 Contacto
 
-Para las miniaturas de la galería puedes actualizar `assets/js/gallery.js` para usar srcset dinámico si generas variantes. Busca el comentario:
-
-```js
-// picture.innerHTML = `<source type="image/webp" srcset="..." sizes="...">`;
-```
-
-y agréga tus rutas.
-
-## Cómo convertir a WebP y generar tamaños
-
-- Usando Squoosh (GUI, gratis): `https://squoosh.app/`
-- Usando Sharp (CLI, Node):
-
-```bash
-# Windows PowerShell
-npm i -g sharp-cli
-sharp fotos/foto.jpg --resize 480 --format webp -o fotos/foto-480.webp
-sharp fotos/foto.jpg --resize 1200 --format webp -o fotos/foto-1200.webp
-sharp fotos/foto.jpg --resize 2560 --format webp -o fotos/foto-2560.webp
-```
-
-- Usando cwebp (CLI): `https://developers.google.com/speed/webp/docs/using`
-
-## Tailwind por CDN (Play CDN)
-
-Este proyecto usa Tailwind por CDN para evitar build. Puede haber un pequeño FOUC (Flash of Unstyled Content). Lo mitigamos ocultando el body hasta establecer el tema y cargar estilos. Puedes retirar esta mitigación si compilas Tailwind.
-
-### Opción producción (compilar Tailwind)
-
-1. Inicializa Node y Tailwind:
-
-```bash
-npm init -y
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-
-2. Configura `tailwind.config.js`:
-
-```js
-module.exports = {
-  content: ["./index.html", "./assets/js/**/*.js"],
-  darkMode: "class",
-  theme: { extend: {} },
-  plugins: [],
-};
-```
-
-3. Crea `assets/css/input.css`:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-4. Compila en desarrollo:
-
-```bash
-npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
-```
-
-5. Compila para producción (minificado):
-
-```bash
-npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify
-```
-
-6. En `index.html`, reemplaza el Play CDN por:
-
-```html
-<link rel="stylesheet" href="assets/css/output.css" />
-```
-
-## Publicar gratis en GitHub Pages
-
-- Método 1 (raíz):
-  1. Sube todo a GitHub.
-  2. En GitHub > Settings > Code and automation > Pages.
-  3. Source: `Deploy from a branch`.
-  4. Branch: `main` (o `master`), Folder: `/root`.
-  5. Guarda. Tu sitio quedará en `https://<usuario>.github.io/<repo>/`.
-
-- Método 2 (carpeta `/docs`):
-  1. Mueve `index.html`, `404.html`, `assets/` a `docs/`.
-  2. En Pages, elige Folder: `/docs`.
-
-### Comandos git de ejemplo
-
-```bash
-# Inicializar y primer push
-git init
-git add .
-git commit -m "Portafolio inicial"
-# Reemplaza <usuario> y <repo>
-git branch -M main
-git remote add origin https://github.com/<usuario>/<repo>.git
-git push -u origin main
-```
-
-## Accesibilidad y SEO
-
-- Alt de imágenes: se genera desde el nombre del archivo.
-- Navegación por teclado: botones y enlaces tienen foco visible.
-- Metas de SEO/Open Graph/Twitter están en `index.html`. Puedes ajustar el `title` y `description`.
-
-## Notas de rendimiento
-
-- `loading="lazy"` y `decoding="async"` en miniaturas.
-- Usa `<picture>` + WebP y `srcset/sizes` para mayor eficiencia.
-- Preconnect a Google Fonts y `preload` para la imagen hero (ajústala si cambias la destacada).
-- Minimiza JS/CSS si compilas Tailwind (ver sección producción).
-
-## Ejemplos de 3 imágenes de muestra
-
-En este repo ya hay fotos en `fotos/`. Ejemplos visibles en la galería:
-
-- `fotos/foto-retrato.jpg`
-- `fotos/casados-mirandose.jpg`
-- `fotos/espuma-playa.jpg`
-
-Para cada una, si generas variantes:
-
-```text
-foto-retrato-480.webp, foto-retrato-1200.webp, foto-retrato-2560.webp
-casados-mirandose-480.webp, casados-mirandose-1200.webp, casados-mirandose-2560.webp
-espuma-playa-480.webp, espuma-playa-1200.webp, espuma-playa-2560.webp
-```
-
-Y ajusta el `<picture>` de ejemplo del hero o en `gallery.js`.
-
-## Formulario de contacto sin backend
-
-- `mailto:` ya funciona, pero algunos clientes pueden abrir el correo local.
-- Alternativas gratuitas:
-  - Formspree: crea un endpoint y cambia `action="https://formspree.io/f/<id>"` y `method="POST"`.
-  - Netlify Forms: añade `netlify` y `name` al `<form>` y publica en Netlify.
+¿Interesado en el trabajo de Anastacia? Visita el sitio y ponte en contacto directamente. Ella estará encantada de hablar sobre tu proyecto.
 
 ---
 
-Hecho con foco en simplicidad, rendimiento y una estética limpia y profesional.
+**Hecho con dedicación para una fotógrafa que cree que cada momento merece ser inmortalizado.**
 
 
