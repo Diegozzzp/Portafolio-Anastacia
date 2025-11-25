@@ -245,7 +245,7 @@
                         </div>
                     </div>
                     
-                    <!-- Lado derecho: Galería visual impactante -->
+                    <!-- Lado derecho: Galería visual impactante (Desktop) -->
                     <div class="hidden lg:block relative h-full">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <!-- Contenedor de fotos con efecto de profundidad -->
@@ -267,6 +267,17 @@
                                     <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Foto principal para Mobile (impactante) -->
+                    <div class="lg:hidden relative w-full mt-8">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                                <img src="fotos/beso-embarazada-esposos.jpg" alt="Trabajo destacado" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                             </div>
                         </div>
                     </div>
@@ -363,7 +374,37 @@
         <div class="absolute bottom-20 left-0 w-96 h-96 bg-brand-300/10 dark:bg-brand-800/10 rounded-full blur-3xl"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 md:gap-12 lg:gap-12 items-center">
+            <!-- Mobile Layout: Nombre - Foto - Párrafo -->
+            <div class="lg:hidden space-y-8 reveal">
+                <!-- Nombre -->
+                <div class="text-center">
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">
+                        <span class="inline-block">Anastacia</span> <span class="text-brand-500">Mejías</span>
+                    </h2>
+                </div>
+                
+                <!-- Foto -->
+                <div class="relative group max-w-sm mx-auto">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative overflow-hidden rounded-3xl shadow-2xl border border-neutral-200/50 dark:border-neutral-800/50 bg-white dark:bg-neutral-900">
+                        <img src="fotos/Ana-manos adelante.jpg" alt="Retrato de la fotógrafa: Anastacia Mejías" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+                        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+                
+                <!-- Párrafo descriptivo -->
+                <div class="space-y-4 text-center">
+                    <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                        Mi trabajo se centra en <span class="font-semibold text-neutral-900 dark:text-white">capturar la auténtica emoción</span> y la narrativa personal detrás de cada solicitud. Mi estilo es natural, utilizando la luz como herramienta principal para crear imágenes que cuentan una historia genuina.
+                    </p>
+                    <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                        Para tu evento especial capturo momentos importantes, de documentación de historias, de amor, prenatal entre otros. Mi enfoque es <span class="font-semibold text-neutral-900 dark:text-white">discreto y espontáneo</span>, capturando los detalles íntimos y la energía real de tu día.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:grid grid-cols-12 gap-8 sm:gap-12 md:gap-12 lg:gap-12 items-center">
                 <!-- Photo & Intro -->
                 <div class="lg:col-span-5 reveal">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6 sm:mb-8">
@@ -398,26 +439,72 @@
                     </div>
 
                     <!-- Mini stats / badges con mejor diseño -->
-                    <div class="flex flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4">
-                        <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 text-sm font-medium shadow-sm hover:shadow-md transition-shadow">
-                            <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="flex flex-wrap gap-3 pt-6 sm:pt-8">
+                        <button class="group relative overflow-hidden px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center gap-2">
+                                <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                <span class="font-semibold text-neutral-900 dark:text-white text-sm">Luz natural</span>
+                            </div>
+                        </button>
+                        
+                        <button class="group relative overflow-hidden px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center gap-2">
+                                <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                                </svg>
+                                <span class="font-semibold text-neutral-900 dark:text-white text-sm">Narrativa visual</span>
+                            </div>
+                        </button>
+                        
+                        <button class="group relative overflow-hidden px-6 py-3 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center gap-2">
+                                <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                                <span class="font-semibold text-neutral-900 dark:text-white text-sm">Detalle & emoción</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badges para Mobile (versión simplificada) -->
+            <div class="lg:hidden mt-12 space-y-4">
+                <div class="grid grid-cols-1 gap-3">
+                    <button class="group relative overflow-hidden w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg active:scale-95">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                             </svg>
-                            Luz natural
-                        </span>
-                        <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 text-sm font-medium shadow-sm hover:shadow-md transition-shadow">
-                            <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <span class="font-semibold text-neutral-900 dark:text-white">Luz natural</span>
+                        </div>
+                    </button>
+                    
+                    <button class="group relative overflow-hidden w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg active:scale-95">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
                             </svg>
-                            Narrativa visual
-                        </span>
-                        <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 text-sm font-medium shadow-sm hover:shadow-md transition-shadow">
-                            <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <span class="font-semibold text-neutral-900 dark:text-white">Narrativa visual</span>
+                        </div>
+                    </button>
+                    
+                    <button class="group relative overflow-hidden w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-900/30 dark:to-brand-800/30 border border-brand-200 dark:border-brand-700/50 hover:border-brand-400 dark:hover:border-brand-600 transition-all duration-300 hover:shadow-lg active:scale-95">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-400/0 via-brand-400/20 to-brand-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative flex items-center justify-center gap-3">
+                            <svg class="w-6 h-6 text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
-                            Detalle & emoción
-                        </span>
-                    </div>
+                            <span class="font-semibold text-neutral-900 dark:text-white">Detalle & emoción</span>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
