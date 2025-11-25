@@ -236,25 +236,42 @@
                         </div>
                     </div>
                     
-                    <!-- Lado derecho: Galería visual creativa -->
-                    <div class="hidden lg:block relative h-96">
-                        <!-- Imagen principal con efecto flotante -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <!-- Imagen 1 - Rotada y adelante -->
-                            <div class="absolute w-64 h-80 rounded-2xl overflow-hidden shadow-2xl transform -rotate-6 hover:rotate-0 transition-all duration-500 hover:scale-105 hover:z-30 cursor-pointer group">
+                    <!-- Lado derecho: Galería visual creativa tipo masonry -->
+                    <div class="hidden lg:block relative h-full min-h-96">
+                        <div class="grid grid-cols-3 grid-rows-3 gap-3 h-96">
+                            <!-- Foto 1 - Grande (2x2) -->
+                            <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 cursor-pointer group">
                                 <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover" loading="eager" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
-                            <!-- Imagen 2 - Rotada opuesta -->
-                            <div class="absolute w-64 h-80 rounded-2xl overflow-hidden shadow-2xl transform rotate-6 -translate-x-20 translate-y-12 hover:rotate-0 transition-all duration-500 hover:scale-105 hover:z-30 cursor-pointer group">
+                            <!-- Foto 2 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/beso-embarazada-esposos.jpg" alt="Momentos" class="w-full h-full object-cover" loading="eager" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
-                            <!-- Imagen 3 - Pequeña al fondo -->
-                            <div class="absolute w-48 h-60 rounded-2xl overflow-hidden shadow-lg transform translate-x-32 -translate-y-20 hover:scale-110 transition-all duration-500 hover:z-30 cursor-pointer group">
+                            <!-- Foto 3 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 4 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                                <img src="fotos/foto-retrato.jpg" alt="Retrato" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 5 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                                <img src="fotos/pizza-cortando.jpg" alt="Gastronomía" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 6 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                                <img src="fotos/espuma-playa.jpg" alt="Naturaleza" class="w-full h-full object-cover" loading="lazy" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                         </div>
@@ -272,19 +289,15 @@
     </section>
     
     <!-- Album creativo de fotografías (después del hero) -->
-    <section id="album" class="relative w-full py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white via-neutral-50 to-white dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950">
+    <section id="album" class="relative w-full py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white via-neutral-50 to-white dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <!-- Encabezado con diseño mejorado -->
-            <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 text-sm font-medium mb-6">
-                    <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse-slow"></span>
-                    Galería destacada
-                </div>
-                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-neutral-900 dark:text-white leading-tight">
-                    Momentos que <span class="text-gradient">cuentan historias</span>
+            <!-- Encabezado elegante -->
+            <div class="text-center mb-12 sm:mb-16 md:mb-20">
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-4 sm:mb-6">
+                    Mi <span class="text-gradient">Portafolio</span>
                 </h2>
-                <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto px-4">
-                    Una selección de trabajos que reflejan mi pasión por la fotografía
+                <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+                    Explora una selección de mis trabajos más destacados
                 </p>
             </div>
             
