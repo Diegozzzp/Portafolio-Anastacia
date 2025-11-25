@@ -209,89 +209,67 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     <a href="#projects" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-black text-white dark:bg-white dark:text-black px-3 py-2 rounded">Saltar al contenido</a>
     
-    <!-- Hero Section - Diseño Creativo e Impactante -->
-    <section id="hero" class="relative w-full h-screen overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 dark:from-black dark:via-neutral-900 dark:to-black">
-        <!-- Fondo con efecto de partículas sutil -->
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-brand-600/20 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
-        </div>
+    <!-- Hero Section - Diseño Impactante y Sorprendente -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden bg-white dark:bg-neutral-950">
+        <!-- Fondo con gradiente elegante -->
+        <div class="absolute inset-0 bg-gradient-to-br from-white via-neutral-50 to-white dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950"></div>
         
-        <!-- Contenido principal con layout creativo -->
-        <div class="relative z-10 h-full flex items-center justify-center py-12">
+        <!-- Contenido principal -->
+        <div class="relative z-10 h-full flex items-center justify-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
                     <!-- Lado izquierdo: Texto impactante -->
-                    <div class="text-white space-y-6 sm:space-y-8 lg:col-span-2">
-                        <div class="space-y-4">
-                            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                    <div class="space-y-8 py-12 lg:py-0">
+                        <div class="space-y-6">
+                            <div class="inline-block">
+                                <span class="text-sm font-semibold text-brand-600 dark:text-brand-400 tracking-widest uppercase">Fotógrafa Profesional</span>
+                            </div>
+                            <h1 class="font-serif text-6xl sm:text-7xl lg:text-8xl font-bold text-neutral-900 dark:text-white leading-tight">
                                 Anastacia
                                 <br>
                                 <span class="text-gradient">Mejías</span>
                             </h1>
-                            <p class="text-xl sm:text-2xl font-light text-neutral-300 max-w-lg">
-                                Cada foto cuenta una historia. Cada luz, una emoción.
+                            <p class="text-xl sm:text-2xl text-neutral-600 dark:text-neutral-300 font-light max-w-xl leading-relaxed">
+                                Capturando la autenticidad, la emoción y la belleza en cada momento. Historias contadas a través de la luz.
                             </p>
                         </div>
                         
-                        <!-- Características destacadas -->
-                        <div class="space-y-3 pt-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
-                                <span class="text-neutral-200">Retratos auténticos</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
-                                <span class="text-neutral-200">Bodas & Eventos memorables</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
-                                <span class="text-neutral-200">Contenido visual para marcas</span>
-                            </div>
-                        </div>
-                        
-                        <!-- CTA Botón -->
-                        <div class="pt-6">
-                            <a href="#projects" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-brand-600/50 group">
-                                Ver Portafolio
+                        <!-- CTA Botón principal -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="#album" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-brand-600/50 group hover:-translate-y-1">
+                                Explorar Trabajo
                                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                             </a>
+                            <a href="#about" class="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white rounded-full font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-300">
+                                Conocer más
+                            </a>
                         </div>
                     </div>
                     
-                    <!-- Lado derecho: Galería visual creativa tipo masonry -->
-                    <div class="hidden lg:block relative w-full h-full lg:col-span-3">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-3 h-full min-h-[500px]">
-                            <!-- Foto 1 - Grande (2x2) -->
-                            <div class="col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 cursor-pointer group">
-                                <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover" loading="eager" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <!-- Foto 2 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
-                                <img src="fotos/beso-embarazada-esposos.jpg" alt="Momentos" class="w-full h-full object-cover" loading="eager" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <!-- Foto 3 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
-                                <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <!-- Foto 4 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
-                                <img src="fotos/foto-retrato.jpg" alt="Retrato" class="w-full h-full object-cover" loading="lazy" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <!-- Foto 5 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
-                                <img src="fotos/casados-mirandose.jpg" alt="Bodas" class="w-full h-full object-cover" loading="lazy" />
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Lado derecho: Galería visual impactante -->
+                    <div class="hidden lg:block relative h-full">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <!-- Contenedor de fotos con efecto de profundidad -->
+                            <div class="relative w-full h-96">
+                                <!-- Foto 1 - Principal (rotada) -->
+                                <div class="absolute top-0 left-0 w-72 h-96 rounded-3xl overflow-hidden shadow-2xl transform -rotate-12 hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-30 cursor-pointer group">
+                                    <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover" loading="eager" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                
+                                <!-- Foto 2 - Centro (principal) -->
+                                <div class="absolute top-12 left-1/2 -translate-x-1/2 w-80 h-96 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:z-40 cursor-pointer group">
+                                    <img src="fotos/beso-embarazada-esposos.jpg" alt="Momentos" class="w-full h-full object-cover" loading="eager" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                
+                                <!-- Foto 3 - Derecha (rotada opuesta) -->
+                                <div class="absolute top-0 right-0 w-72 h-96 rounded-3xl overflow-hidden shadow-2xl transform rotate-12 hover:rotate-0 transition-all duration-500 hover:scale-110 hover:z-30 cursor-pointer group">
+                                    <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -299,11 +277,14 @@
             </div>
         </div>
         
-        <!-- Indicador de scroll -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+        <!-- Indicador de scroll animado -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <div class="flex flex-col items-center gap-2 animate-bounce">
+                <span class="text-sm text-neutral-500 dark:text-neutral-400">Desplázate</span>
+                <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
         </div>
     </section>
     
