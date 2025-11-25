@@ -47,19 +47,44 @@
     <script>
         tailwind.config = {
             darkMode: 'class',
+            theme: {
                 extend: {
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
                         'serif': ['Playfair Display', 'serif'],
                     },
+                    colors: {
+                        brand: {
+                            50: '#faf9f7',
+                            100: '#f5f3f0',
+                            200: '#ede8e3',
+                            300: '#d4ccc3',
+                            400: '#a89f94',
+                            500: '#8b8276',
+                            600: '#6b6359',
+                            700: '#5a5248',
+                            800: '#4a423a',
+                            900: '#3d362f',
+                        }
+                    },
                     animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
                         scaleIn: {
                             '0%': { opacity: '0', transform: 'scale(0.95)' },
-
                             '100%': { opacity: '1', transform: 'scale(1)' },
                         },
                         float: {
@@ -193,11 +218,11 @@
         </div>
         
         <!-- Contenido principal con layout creativo -->
-        <div class="relative z-10 h-full flex items-center justify-center">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="relative z-10 h-full flex items-center justify-center py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
                     <!-- Lado izquierdo: Texto impactante -->
-                    <div class="text-white space-y-6 sm:space-y-8">
+                    <div class="text-white space-y-6 sm:space-y-8 lg:col-span-2">
                         <div class="space-y-4">
                             <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
                                 Anastacia
@@ -237,41 +262,59 @@
                     </div>
                     
                     <!-- Lado derecho: Galería visual creativa tipo masonry -->
-                    <div class="hidden lg:block relative h-full min-h-96">
-                        <div class="grid grid-cols-3 grid-rows-3 gap-3 h-96">
+                    <div class="hidden lg:block relative w-full h-full lg:col-span-3">
+                        <div class="grid grid-cols-4 grid-rows-4 gap-2 h-full min-h-[600px]">
                             <!-- Foto 1 - Grande (2x2) -->
-                            <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 cursor-pointer group">
+                            <div class="col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 cursor-pointer group">
                                 <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover" loading="eager" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
-                            <!-- Foto 2 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                            <!-- Foto 2 - Mediana (2x1) -->
+                            <div class="col-span-2 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer group">
                                 <img src="fotos/beso-embarazada-esposos.jpg" alt="Momentos" class="w-full h-full object-cover" loading="eager" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
                             <!-- Foto 3 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
                             <!-- Foto 4 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/foto-retrato.jpg" alt="Retrato" class="w-full h-full object-cover" loading="lazy" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
                             <!-- Foto 5 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/pizza-cortando.jpg" alt="Gastronomía" class="w-full h-full object-cover" loading="lazy" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                             
                             <!-- Foto 6 - Pequeña -->
-                            <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
                                 <img src="fotos/espuma-playa.jpg" alt="Naturaleza" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 7 - Mediana (2x1) -->
+                            <div class="col-span-2 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer group">
+                                <img src="fotos/marca-producto.jpg" alt="Marcas" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 8 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                                <img src="fotos/casados-mirandose.jpg" alt="Bodas" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Foto 9 - Pequeña -->
+                            <div class="col-span-1 row-span-1 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-110 cursor-pointer group">
+                                <img src="fotos/Ana-manos adelante.jpg" alt="Retrato" class="w-full h-full object-cover" loading="lazy" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
                         </div>
