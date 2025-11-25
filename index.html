@@ -841,9 +841,15 @@
         }
 
         function setMenuState(isOpen) {
-            mobileMenu.classList.toggle('translate-x-full', !isOpen);
-            mobileMenuOverlay.classList.toggle('opacity-0', !isOpen);
-            mobileMenuOverlay.classList.toggle('pointer-events-none', !isOpen);
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenuOverlay.classList.remove('pointer-events-none');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0');
+                mobileMenuOverlay.classList.add('pointer-events-none');
+            }
             mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
             mobileMenu.setAttribute('aria-hidden', String(!isOpen));
             if (isOpen) lockBodyScroll(); else unlockBodyScroll();
@@ -854,8 +860,8 @@
         mobileMenu.setAttribute('aria-hidden', 'true');
 
         mobileMenuBtn.addEventListener('click', () => {
-            const willOpen = mobileMenu.classList.contains('translate-x-full');
-            setMenuState(willOpen);
+            const isCurrentlyOpen = !mobileMenu.classList.contains('translate-x-full');
+            setMenuState(!isCurrentlyOpen);
         });
 
         // Close mobile menu when clicking on links
