@@ -184,95 +184,90 @@
 <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased overflow-x-hidden">
     <a href="#projects" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-black text-white dark:bg-white dark:text-black px-3 py-2 rounded">Saltar al contenido</a>
     
-    <!-- Hero Section - Galería visual impactante -->
-    <section id="hero" class="relative w-full min-h-screen overflow-hidden bg-white dark:bg-neutral-950">
-        <!-- Fondo elegante con gradiente sutil -->
-        <div class="absolute inset-0 bg-gradient-to-b from-neutral-50 via-white to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950"></div>
+    <!-- Hero Section - Diseño Creativo e Impactante -->
+    <section id="hero" class="relative w-full h-screen overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 dark:from-black dark:via-neutral-900 dark:to-black">
+        <!-- Fondo con efecto de partículas sutil -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-brand-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+        </div>
         
-        <!-- Contenido principal -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
-            <!-- Encabezado elegante -->
-            <div class="text-center mb-12 sm:mb-16 md:mb-20">
-                <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-neutral-900 dark:text-white mb-4 sm:mb-6 leading-tight">
-                    Anastacia Mejías
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 font-light max-w-2xl mx-auto">
-                    Capturando historias auténticas a través de la luz y la emoción
-                </p>
-            </div>
-            
-            <!-- Galería visual de 3 imágenes destacadas -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
-                <!-- Imagen 1: Grande -->
-                <div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64 md:h-96">
-                    <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="font-semibold text-sm sm:text-base">Retratos</p>
+        <!-- Contenido principal con layout creativo -->
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <!-- Lado izquierdo: Texto impactante -->
+                    <div class="text-white space-y-6 sm:space-y-8">
+                        <div class="space-y-4">
+                            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                                Anastacia
+                                <br>
+                                <span class="text-gradient">Mejías</span>
+                            </h1>
+                            <p class="text-xl sm:text-2xl font-light text-neutral-300 max-w-lg">
+                                Cada foto cuenta una historia. Cada luz, una emoción.
+                            </p>
+                        </div>
+                        
+                        <!-- Características destacadas -->
+                        <div class="space-y-3 pt-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
+                                <span class="text-neutral-200">Retratos auténticos</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
+                                <span class="text-neutral-200">Bodas & Eventos memorables</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
+                                <span class="text-neutral-200">Contenido visual para marcas</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Botón -->
+                        <div class="pt-6">
+                            <a href="#projects" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-brand-600/50 group">
+                                Ver Portafolio
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Imagen 2 -->
-                <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64">
-                    <img src="fotos/beso-embarazada-esposos.jpg" alt="Maternidad" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="eager" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="font-semibold text-sm sm:text-base">Momentos Especiales</p>
+                    
+                    <!-- Lado derecho: Galería visual creativa -->
+                    <div class="hidden lg:block relative h-96">
+                        <!-- Imagen principal con efecto flotante -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <!-- Imagen 1 - Rotada y adelante -->
+                            <div class="absolute w-64 h-80 rounded-2xl overflow-hidden shadow-2xl transform -rotate-6 hover:rotate-0 transition-all duration-500 hover:scale-105 hover:z-30 cursor-pointer group">
+                                <img src="fotos/fotoretrato-camaraencara.jpg" alt="Retratos" class="w-full h-full object-cover" loading="eager" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Imagen 2 - Rotada opuesta -->
+                            <div class="absolute w-64 h-80 rounded-2xl overflow-hidden shadow-2xl transform rotate-6 -translate-x-20 translate-y-12 hover:rotate-0 transition-all duration-500 hover:scale-105 hover:z-30 cursor-pointer group">
+                                <img src="fotos/beso-embarazada-esposos.jpg" alt="Momentos" class="w-full h-full object-cover" loading="eager" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <!-- Imagen 3 - Pequeña al fondo -->
+                            <div class="absolute w-48 h-60 rounded-2xl overflow-hidden shadow-lg transform translate-x-32 -translate-y-20 hover:scale-110 transition-all duration-500 hover:z-30 cursor-pointer group">
+                                <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover" loading="lazy" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Imagen 3 -->
-                <div class="overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer h-64">
-                    <img src="fotos/estructura-carrousel.jpg" alt="Editorial" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p class="font-semibold text-sm sm:text-base">Editorial & Lifestyle</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tres categorías destacadas con descripción -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-                <div class="text-center">
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-600/20 text-brand-600 mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-neutral-900 dark:text-white mb-2">Retratos</h3>
-                    <p class="text-neutral-600 dark:text-neutral-400 text-sm">Capturando la esencia y personalidad en cada rostro</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-600/20 text-brand-600 mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-neutral-900 dark:text-white mb-2">Bodas & Eventos</h3>
-                    <p class="text-neutral-600 dark:text-neutral-400 text-sm">Documentando momentos especiales con autenticidad</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-600/20 text-brand-600 mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-neutral-900 dark:text-white mb-2">Marcas & Productos</h3>
-                    <p class="text-neutral-600 dark:text-neutral-400 text-sm">Creando contenido visual que conecta con tu audiencia</p>
                 </div>
             </div>
-            
-            <!-- CTA principal -->
-            <div class="text-center">
-                <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 text-white rounded-full font-medium hover:bg-brand-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
-                    Explorar Portafolio
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
-            </div>
+        </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
         </div>
     </section>
     
