@@ -333,7 +333,36 @@
     // Actualizar descripciones detalladas
     lbPurpose.textContent = img.description.purpose;
     lbTechnique.textContent = img.description.technique;
-    lbStory.textContent = img.description.story;
+    
+    // Actualizar la historia con el sistema de "Leer más"
+    lbStory.innerHTML = ''; // Limpiar contenido anterior
+    
+    const storyText = document.createElement('div');
+    storyText.className = 'collapsible-text';
+    storyText.textContent = img.description.story;
+    
+    const readMoreBtn = document.createElement('div');
+    readMoreBtn.className = 'read-more-btn';
+    readMoreBtn.innerHTML = 'Leer más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+    
+    // Verificar si el texto es lo suficientemente largo como para necesitar "Leer más"
+    if (img.description.story.length > 150) {
+        // Añadir evento de clic
+        readMoreBtn.addEventListener('click', function() {
+            storyText.classList.toggle('expanded');
+            readMoreBtn.classList.toggle('expanded');
+            readMoreBtn.innerHTML = storyText.classList.contains('expanded') 
+                ? 'Leer menos <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>'
+                : 'Leer más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+        });
+    } else {
+        // Si el texto es corto, mostrar sin "Leer más"
+        readMoreBtn.style.display = 'none';
+        storyText.classList.add('expanded');
+    }
+    
+    lbStory.appendChild(storyText);
+    lbStory.appendChild(readMoreBtn);
     
     // Actualizar contador
     const filteredImages = getFiltered();

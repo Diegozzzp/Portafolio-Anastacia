@@ -203,6 +203,89 @@
         #hero .group {
             position: relative;
         }
+
+        /* Estilos para el texto colapsable */
+        .collapsible-text {
+            position: relative;
+            overflow: hidden;
+            max-height: 3.6em;
+            line-height: 1.2em;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapsible-text.expanded {
+            max-height: none;
+        }
+        
+        .collapsible-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.2em;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.9) 100%);
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+        
+        .dark .collapsible-text::after {
+            background: linear-gradient(to bottom, 
+                rgba(15, 23, 42, 0) 0%, 
+                rgba(15, 23, 42, 0.9) 100%);
+        }
+        
+        .collapsible-text.expanded::after {
+            opacity: 0;
+        }
+        
+        .read-more-btn {
+            color: #8b8276;
+            color: var(--color-brand-500);
+            --tw-text-opacity: 1;
+            color: rgba(139, 130, 118, var(--tw-text-opacity));
+            --tw-text-opacity: 1;
+            color: rgba(107, 99, 89, var(--tw-text-opacity));
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            margin-top: 0.25rem;
+            display: inline-flex;
+            cursor: pointer;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .dark .read-more-btn {
+            --tw-text-opacity: 1;
+            color: rgba(168, 159, 148, var(--tw-text-opacity));
+        }
+        
+        .read-more-btn:hover {
+            --tw-text-opacity: 1;
+            color: rgba(107, 99, 89, var(--tw-text-opacity));
+        }
+        
+        .dark .read-more-btn:hover {
+            --tw-text-opacity: 1;
+            color: rgba(212, 204, 195, var(--tw-text-opacity));
+        }
+        
+        .read-more-btn svg {
+            width: 1rem;
+            height: 1rem;
+            margin-left: 0.25rem;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .read-more-btn.expanded svg {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
