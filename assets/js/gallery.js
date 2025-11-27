@@ -69,9 +69,9 @@
       story: 'Los niños son los mejores modelos porque no posan, simplemente son ellos mismos'
     },
     'manos-agarranado-zapatos-bebe.jpg': {
-      purpose: 'Documentar los pequeños detalles que hacen únicos los momentos familiares',
-      technique: 'Macro con apertura amplia, enfoque selectivo en las manos',
-      story: 'Esta imagen captura la ternura de los primeros pasos y la curiosidad infantil'
+      purpose: 'Sesión prenatal en el bosque',
+      technique: 'Luz natural suave, enfoque en los detalles significativos',
+      story: 'Celebrando el milagro que está por llegar. Un instante de amor y espera enmarcado por la naturaleza. La pareja comparte un beso apasionado mientras una lluvia de pétalos de rosa rojos cae a su alrededor.'
     },
     'manos-casados-anillos.jpg': {
       purpose: 'Símbolo del compromiso y la unión en una boda',
