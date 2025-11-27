@@ -84,14 +84,14 @@
       story: 'Este beso fue completamente espontáneo, capturé la emoción pura del momento'
     },
     'beso-embarazada-esposos.jpg': {
-      purpose: 'Documentar el amor en una nueva etapa de la vida familiar',
+      purpose: 'Sesión prenatal en el bosque',
       technique: 'Luz natural suave, enfoque en la expresión de amor y expectación',
-      story: 'La ternura de esperar un bebé se refleja en cada gesto y mirada entre los padres'
+      story: 'Celebrando el milagro que está por llegar. Un instante de amor y espera enmarcado por la naturaleza. La pareja comparte un beso apasionado mientras una lluvia de pétalos de rosa rojos cae a su alrededor.'
     },
     'embarazada-esposo-mirada.jpg': {
-      purpose: 'Mostrar la complicidad y apoyo durante el embarazo',
+      purpose: 'Sesión prenatal en el bosque',
       technique: 'Composición diagonal, luz natural que resalta las formas suaves',
-      story: 'Una mirada llena de amor y protección que habla más que mil palabras'
+      story: 'Celebrando el milagro que está por llegar. Un instante de amor y espera enmarcado por la naturaleza. La pareja comparte un beso apasionado mientras una lluvia de pétalos de rosa rojos cae a su alrededor.'
     },
     'estructura-carrousel.jpg': {
       purpose: 'Explorar la geometría y los juegos de luz en arquitectura',
