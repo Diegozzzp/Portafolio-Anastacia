@@ -98,21 +98,6 @@
       technique: 'Composición geométrica, contraste entre luces y sombras',
       story: 'Me fascina cómo la luz transforma las estructuras en esculturas de sombras'
     },
-    'espuma-playa.jpg': {
-      purpose: 'Capturar el movimiento y la textura del mar',
-      technique: 'Velocidad de obturación lenta para crear movimiento fluido, composición minimalista',
-      story: 'La espuma del mar crea patrones únicos que nunca se repiten, cada ola es diferente'
-    },
-    'playa.jpg': {
-      purpose: 'Documentar la serenidad y vastedad del paisaje costero',
-      technique: 'Horizonte en tercio inferior, luz natural de atardecer',
-      story: 'Los atardeceres en la playa ofrecen los colores más hermosos para fotografiar'
-    },
-    'monta;a-playa.jpg': {
-      purpose: 'Contrastar la inmensidad de la montaña con el mar',
-      technique: 'Composición de paisaje amplio, luz natural de mediodía',
-      story: 'La combinación de montaña y mar crea paisajes únicos llenos de texturas'
-    },
     'marca-producto.jpg': {
       purpose: 'Fotografía comercial para destacar productos de manera atractiva',
       technique: 'Iluminación de estudio controlada, composición limpia y minimalista',
